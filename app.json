@@ -1,0 +1,44 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/souls-category/souls-category",
+        "pages/soul-detail/soul-detail",
+        "pages/weapon-category/weapon-category"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "仙师书斋",
+        "navigationBarTextStyle": "black"
+    },
+    "useExtendedLib": {
+        "weui": true
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "color": "#6e6d6b",
+        "selectedColor": "#e64340",
+        "borderStyle": "white",
+        "backgroundColor": "#fff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/souls-category/souls-category",
+                "text": "神魂"
+            },
+            {
+                "pagePath": "pages/weapon-category/weapon-category",
+                "text": "灵器"
+            },
+            {
+                "pagePath": "pages/weapon-category/weapon-category",
+                "text": "残影"
+            }
+        ]
+    }
+}

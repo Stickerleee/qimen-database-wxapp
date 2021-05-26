@@ -1,0 +1,22 @@
+<!--pages/souls-category/souls-category.wxml-->
+<view class="container">
+    <view class="title">神魂一览</view>
+    <view class="search">搜索</view>
+    <blcok class="categorys" wx:for="{{categorys}}" wx:for-item="item" wx:key="item" wx:for-index="idx">
+        <view class="item" id="{{idx}}" bindtap="showDetail">
+            <view class="item-image" >
+                <image src="{{item.src}}" mode="aspectFill"></image>
+            </view>
+            <view class="info">
+                <view class="name">
+                    <text>{{item.name}}</text>
+                    <text> | </text>
+                    <text>{{item.property}}</text>
+                </view>
+                <view class="tags">
+                    <button class="mini-btn" type="default" size="mini" disabled="true" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</button>
+                </view>
+            </view>
+        </view>
+    </blcok>
+</view>

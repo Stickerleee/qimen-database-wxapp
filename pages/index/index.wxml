@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+  <view>数据库主页</view>
+  <view>搜索框（组件）</view>
+  <view>数据库介绍</view>
+</view>
