@@ -1,4 +1,7 @@
 {
   "usingComponents": {
-  }
+    "mp-searchbar": "weui-miniprogram/searchbar/searchbar",
+    "list-categorys":"../../components/list-categorys/list-categorys"
+  },
+  "navigationBarTitleText": "神魂总览"
 }

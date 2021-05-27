@@ -1,0 +1,35 @@
+/* pages/shadows-category/shadows-category.wxss */
+
+
+.weui-tabs-bar__content{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab-bar-title__selected {
+    font-weight: bold;
+}
+
+.tab-content {
+    display: block;
+    padding: 15rpx 30rpx;
+}
+
+.item {
+    width: 200rpx;
+    height: 100rpx;
+    padding: 15rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.item-info {
+    display: flex;
+    align-items: center;
+}

@@ -1,29 +1,20 @@
-// pages/souls-category/souls-category.js
+// pages/shadows-category/shadows-category.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        categorys:[]
+        tabs : [{title:'全部'},{title:'主动残影'},{title:'被动残影'}]
     },
 
-    // 跳转到物品详情页
-    showDetail: function (event) {
-        const id = event.currentTarget.id
-        wx.navigateTo({
-          url: '../soul-detail/soul-detail?id=' + id
-        })
-
-    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // 加载数据
-        const a = require('../../data/souls.js').data
+        const alldata = require('../../data/shadows').shadows
         this.setData({
-            categorys:a.data
+            alldata
         })
     },
 

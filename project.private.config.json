@@ -1,0 +1,36 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "神魂总览",
+                    "pathName": "pages/souls-category/souls-category",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "神魂详情",
+                    "pathName": "pages/soul-detail/soul-detail",
+                    "query": "id=0",
+                    "scene": null
+                },
+                {
+                    "name": "残影总览",
+                    "pathName": "pages/shadows-category/shadows-category",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

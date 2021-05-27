@@ -11,7 +11,13 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: function (event) {
+        const index = event.id
+        const curItem = require('../../data/souls.js').data.data[index]
+        this.setData({
+            id:index,
+            curItem:curItem
+        })
 
     },
 

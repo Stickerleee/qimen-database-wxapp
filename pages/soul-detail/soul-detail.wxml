@@ -1,2 +1,43 @@
 <!--pages/soul-detail/soul-detail.wxml-->
-<text>pages/soul-detail/soul-detail.wxml</text>
+<view class="container">
+    <view class="info-card">
+        <view class="base-info">
+            <view class="base-image"><image src="{{curItem.icon}}" mode="aspectFill"></image></view>
+            <view class="base-info-text">
+                <view class="name">
+                    <text class="item-name">{{curItem.name}}</text>
+                    <text> | </text>
+                    <text>{{curItem.property}}</text>
+                    <text> | </text>
+                    <text>{{curItem.divinatory}}</text>
+                </view>
+                <view class="tags">
+                    <button class="mini-btn" type="default" size="mini" disabled="true" wx:for="{{curItem.tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</button>
+                </view>
+            </view>
+        </view>
+        <view class="effect-info">
+            <view class="second-title">神魂效果</view>
+            <text>两件效果：{{curItem.effect}}</text>
+            <text>三件效果：{{curItem.effect}}</text>
+            <view class="second-title">阶级效果</view>
+            <text>每阶级：xxxx</text>
+            <text>20阶级：xxxxx</text>
+            <text>60阶级：xxxxx</text>
+            <view class="second-title">满阶效果</view>
+            <text>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</text>
+        </view>
+        <view class="soul-show">
+            <view class="second-title">神魂展示</view>
+            <view class="soul-card" wx:for="{{['pic0','pic1','pic2']}}" wx:key="pic">
+                <image src="{{curItem[item]}}"></image>
+                <view class="soul-detail">
+                    <text>一级属性：</text>
+                    <text>xxxxxxxxxxxxxxxxxxxxx</text>
+                    <text>满级属性：</text>
+                    <text>xxxxxxxxxxxxxxxxxxxxx</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

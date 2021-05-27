@@ -4,7 +4,8 @@
         "pages/logs/logs",
         "pages/souls-category/souls-category",
         "pages/soul-detail/soul-detail",
-        "pages/weapon-category/weapon-category"
+        "pages/weapon-category/weapon-category",
+        "pages/shadows-category/shadows-category"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -36,7 +37,7 @@
                 "text": "灵器"
             },
             {
-                "pagePath": "pages/weapon-category/weapon-category",
+                "pagePath": "pages/shadows-category/shadows-category",
                 "text": "残影"
             }
         ]

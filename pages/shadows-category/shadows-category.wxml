@@ -1,0 +1,13 @@
+<!--pages/shadows-category/shadows-category.wxml-->
+<mp-tabs tabs="{{tabs}}" swiper-class="tabs-bar-class" active-class="tab-bar-title__selected">
+    <block wx:for="{{tabs}}" wx:key="title">
+        <view class="tab-content" slot="tab-content-{{index}}">
+            <view class="item">
+                <image src="{{alldata.positiv[0].icon}}"></image>
+                <view class="item-info">
+                    <text>{{alldata.positiv[0].name}}</text>
+                </view>
+            </view>
+        </view>
+    </block>
+</mp-tabs>

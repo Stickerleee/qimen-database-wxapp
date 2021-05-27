@@ -1,5 +1,10 @@
 /**app.wxss**/
 .container {
-  height: 100%;
   padding: 0 30rpx;
+  display: block;
 } 
+
+.search {
+  width: 750rpx;
+  margin-left: -30rpx;
+}

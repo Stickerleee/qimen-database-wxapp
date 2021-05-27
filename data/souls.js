@@ -1,23 +1,32 @@
-module.exports={
 
-};
 var data = {
     "data":[
         {
             "type":"soul",
-            "name":"药水",
-            "property":"土",
-            "tags":["恢复","治疗","主动"],
-            "src":"/images/souls/test/icon.png",
-            "info":"恢复40%生命上限的生命值"
+            "id":"0",
+            "name":"破日",
+            "property":"攻击",
+            "divinatory":"乾",
+            "tags":["增益","成长"],
+            "icon":"/images/souls/test/pori0.jpg",
+            "pic0":"/images/souls/test/pori1.jpg",
+            "pic1":"/images/souls/test/pori1.jpg",
+            "pic2":"/images/souls/test/pori1.jpg",
+            "effect":"增加攻击，击杀怪物时有15%的几率增加1.8%的攻击力，最多叠加15层。",
+            "info":"来自某个地方的少女，驱蚊器翁群翁群翁群翁群翁群翁群翁群翁群翁群二群翁群翁群无翁群无。"
         },
         {
             "type":"soul",
-            "name":"水晶",
+            "id":"0",
+            "name":"破日",
             "property":"攻击",
-            "tags":["攻击","被动"],
-            "src":"/images/souls/test/icon.png",
-            "info":"提升100点攻击力"
+            "divinatory":"乾",
+            "tags":["增益","成长"],
+            "icon":"/images/souls/test/pori0.jpg",
+            "pic0":"/images/souls/test/pori1.jpg",
+            "pic1":"",
+            "pic2":"",
+            "info":"增加攻击"
         }
     ]
 }
