@@ -1,21 +1,7 @@
 <!--pages/soul-detail/soul-detail.wxml-->
 <view class="container">
     <view class="info-card">
-        <view class="base-info">
-            <view class="base-image"><image src="{{curItem.icon}}" mode="aspectFill"></image></view>
-            <view class="base-info-text">
-                <view class="name">
-                    <text class="item-name">{{curItem.name}}</text>
-                    <text> | </text>
-                    <text>{{curItem.property}}</text>
-                    <text> | </text>
-                    <text>{{curItem.divinatory}}</text>
-                </view>
-                <view class="tags">
-                    <button class="mini-btn" type="default" size="mini" disabled="true" wx:for="{{curItem.tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</button>
-                </view>
-            </view>
-        </view>
+        <base-info-card icon="{{curItem.icon}}" name="{{curItem.name}}" property="{{curItem.property}}" divinatory="{{curItem.divinatory}}" tags="{{curItem.tags}}"></base-info-card>
         <view class="effect-info">
             <view class="second-title">神魂效果</view>
             <text>两件效果：{{curItem.effect}}</text>

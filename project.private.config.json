@@ -29,6 +29,18 @@
                     "pathName": "pages/shadows-category/shadows-category",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "残影详情",
+                    "pathName": "pages/shadow-detail/shadow-detail",
+                    "query": "idx=0",
+                    "scene": null
+                },
+                {
+                    "name": "灵器总览",
+                    "pathName": "pages/weapon-category/weapon-category",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

@@ -11,25 +11,14 @@
     font-weight: bold;
 }
 
+
+.tab-class {
+    height:100vh;
+}
+
 .tab-content {
-    display: block;
-    padding: 15rpx 30rpx;
-}
-
-.item {
-    width: 200rpx;
-    height: 100rpx;
-    padding: 15rpx;
-    display: flex;
-    justify-content: space-between;
-}
-
-.item image {
-    width: 100rpx;
-    height: 100rpx;
-}
-
-.item-info {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 40rpx;
+    padding: 30rpx;
 }

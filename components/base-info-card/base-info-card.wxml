@@ -1,12 +1,12 @@
-<!--components/list-categorys/list-categorys.wxml-->
-<!-- 列表状目录 -->
-<view class="item" bindtap="showDetail">
-    <view class="item-image" >
-        <image src="{{icon}}" mode="aspectFill" lazy-load="true"></image>
+<!--components/base-info-card/base-info-card.wxml-->
+<!-- 带标签tag的基本信息卡片 -->
+<view class="base-info">
+    <view class="base-image">
+        <image src="{{icon}}" mode="aspectFill"></image>
     </view>
-    <view class="info">
+    <view class="base-info-text">
         <view class="name">
-            <text style="font-weight: bold">{{name}}</text>
+            <text class="item-name">{{name}}</text>
             <text> | </text>
             <text>{{property}}</text>
             <text> | </text>

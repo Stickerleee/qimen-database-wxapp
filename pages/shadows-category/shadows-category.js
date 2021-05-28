@@ -1,3 +1,5 @@
+const { shadows } = require('../../data/shadows')
+
 // pages/shadows-category/shadows-category.js
 Page({
 
@@ -5,16 +7,20 @@ Page({
      * 页面的初始数据
      */
     data: {
-        tabs : [{title:'全部'},{title:'主动残影'},{title:'被动残影'}]
+        tabs : [{title:'主动残影'},{title:'被动残影'}]
     },
+
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        const alldata = require('../../data/shadows').shadows
+        const allshadows = require('../../data/shadows').shadows.data
+        const positivShadows = allshadows.filter((item)=>item.class==='positiv')
+        const negativShadows = allshadows.filter((item)=>item.class==='negativ')
         this.setData({
-            alldata
+            // alldata:positivShadows.concat(negativShadows),
+            tabDataSrc:[positivShadows,negativShadows]
         })
     },
 

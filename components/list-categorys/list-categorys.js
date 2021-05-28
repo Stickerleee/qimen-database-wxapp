@@ -25,9 +25,8 @@ Component({
     methods: {
         // 跳转到物品详情页
         showDetail: function (event) {
-            const id = this.properties.id
             wx.navigateTo({
-            url: '../soul-detail/soul-detail?id=' + id
+            url: '../soul-detail/soul-detail?id=' + this.properties.id
             })
 
         },

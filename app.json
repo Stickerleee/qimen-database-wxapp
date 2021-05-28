@@ -5,7 +5,8 @@
         "pages/souls-category/souls-category",
         "pages/soul-detail/soul-detail",
         "pages/weapon-category/weapon-category",
-        "pages/shadows-category/shadows-category"
+        "pages/shadows-category/shadows-category",
+        "pages/shadow-detail/shadow-detail"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -26,19 +27,23 @@
         "list": [
             {
                 "pagePath": "pages/index/index",
-                "text": "首页"
+                "text": "首页",
+                "iconPath": "images/icon/home.png"
             },
             {
                 "pagePath": "pages/souls-category/souls-category",
-                "text": "神魂"
+                "text": "神魂",
+                "iconPath": "images/icon/home.png"
             },
             {
                 "pagePath": "pages/weapon-category/weapon-category",
-                "text": "灵器"
+                "text": "灵器",
+                "iconPath": "images/icon/home.png"
             },
             {
                 "pagePath": "pages/shadows-category/shadows-category",
-                "text": "残影"
+                "text": "残影",
+                "iconPath": "images/icon/home.png"
             }
         ]
     }

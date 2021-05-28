@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "base-info-card": "/components/base-info-card/base-info-card"
+  },
   "navigationBarTitleText": "神魂详情"
 }

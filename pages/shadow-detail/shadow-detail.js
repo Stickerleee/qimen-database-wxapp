@@ -1,20 +1,21 @@
-// pages/souls-category/souls-category.js
+// pages/shadow-detail/shadow-detail.js
 Page({
 
     /**
      * 页面的初始数据
      */
-    data: {
+    data: { 
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-        // 加载数据
-        const categorys = require('../../data/souls.js').data.data
+    onLoad: function (event) {
+        const {idx} = event
+        const curShadow = require('../../data/shadows').shadows.data[idx]
         this.setData({
-            categorys
+            curShadow
         })
     },
 

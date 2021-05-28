@@ -1,0 +1,8 @@
+<!--components/item-categorys/item-categorys.wxml-->
+<!-- 块状目录 -->
+<view class="item" bindtap="showDetail">
+    <image src="{{icon}}" lazy-load="true"></image>
+    <view class="item-info">
+        <text>{{name}}</text>
+    </view>
+</view>

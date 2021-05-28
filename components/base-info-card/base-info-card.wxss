@@ -1,0 +1,30 @@
+/* components/base-info-card/base-info-card.wxss */
+.base-info {
+    width: 100%;
+    display: flex;
+}
+
+.base-image image{
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.base-info-text {
+    padding-left: 50rpx;
+}
+
+
+.name {
+    height: 100rpx;
+}
+.item-name {
+    font-size: xx-large;
+}
+
+.tags {
+    padding: 20rpx 0;
+}
+
+.tags button {
+    margin-right: 30rpx;
+}
