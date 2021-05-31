@@ -1,0 +1,5 @@
+<!--components/vtabs-categorys/vtabs-categorys.wxml-->
+<!-- 附带目录的侧选项卡 -->
+<mp-vtabs vtabs="{{vtabs}}" bindtabclick="changeIdx">
+    <slot></slot>
+</mp-vtabs>

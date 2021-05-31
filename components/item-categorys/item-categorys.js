@@ -6,7 +6,8 @@ Component({
     properties: {
         idx:Number,
         icon:String,
-        name:String
+        name:String,
+        type:String
     },
 
     /**
@@ -21,8 +22,9 @@ Component({
      */
     methods: {
         showDetail:function(){
+            // 根据类型跳转到相关页面
             wx.navigateTo({
-              url: '/pages/shadow-detail/shadow-detail?idx='+ this.properties.idx
+              url: '/pages/shadow-detail/shadow-detail?type=' + this.properties.type +'&idx=' + this.properties.idx
             })
         }
     }

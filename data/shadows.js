@@ -6,7 +6,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "乾",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -16,7 +16,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "乾",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -26,7 +26,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "乾",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -36,7 +36,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "乾",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -46,7 +46,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "乾",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -56,7 +56,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "乾",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -66,7 +66,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坤",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -76,7 +76,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坤",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -86,7 +86,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坤",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -96,7 +96,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坤",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -106,7 +106,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坤",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -116,7 +116,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坤",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -126,7 +126,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "离",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -136,7 +136,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "离",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -146,7 +146,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "离",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -156,7 +156,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "离",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -166,7 +166,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "离",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -176,7 +176,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "离",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -186,7 +186,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "离",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -196,7 +196,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坎",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -206,7 +206,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坎",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -216,7 +216,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坎",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -226,7 +226,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坎",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -236,7 +236,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坎",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -246,7 +246,7 @@ var shadows = {
           "name": "药水",
           "class": "positiv",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "坎",
           "icon": "/images/shadows/yaoshui.png",
           "effect": "恢复40%最大生命值。"
         },
@@ -456,7 +456,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "巽",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -466,7 +466,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "巽",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -476,7 +476,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "巽",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -486,7 +486,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "巽",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -496,7 +496,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "巽",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -506,7 +506,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "震",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -516,7 +516,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "震",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -526,7 +526,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "震",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -536,7 +536,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "震",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -546,7 +546,7 @@ var shadows = {
           "name": "师刀",
           "class": "negativ",
           "property": "治愈",
-          "divinatory": "兑",
+          "divinatory": "震",
           "icon": "/images/shadows/shidao.png",
           "effect": "在生命值高于90%时，增加15%的暴击率。"
         },
@@ -682,6 +682,16 @@ var shadows = {
         },
         {
           "idx": 68,
+          "type": "shadow",
+          "name": "师刀",
+          "class": "negativ",
+          "property": "治愈",
+          "divinatory": "兑",
+          "icon": "/images/shadows/shidao.png",
+          "effect": "在生命值高于90%时，增加15%的暴击率。"
+        },
+        {
+          "idx": 69,
           "type": "shadow",
           "name": "师刀",
           "class": "negativ",

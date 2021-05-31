@@ -1,2 +1,8 @@
 <!--pages/weapon-category/weapon-category.wxml-->
-<text>pages/weapon-category/weapon-category.wxml</text>
+<vtabs-categorys bind:changeIdx="bindVtabClick">
+    <view class="categorys">
+        <block wx:for="{{curTabData}}" wx:key="item">
+            <item-categorys idx="{{item.idx}}" icon="{{item.icon}}" name="{{item.name}}" type="{{item.type}}"></item-categorys>
+        </block>
+    </view>
+</vtabs-categorys>

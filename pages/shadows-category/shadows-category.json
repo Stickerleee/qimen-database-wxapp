@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "mp-tabs": "@miniprogram-component-plus/tabs",
+    "vtabs-categorys":"/components/vtabs-categorys/vtabs-categorys",
     "item-categorys":"/components/item-categorys/item-categorys"
   }
 }

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "vtabs-categorys":"/components/vtabs-categorys/vtabs-categorys",
+    "item-categorys":"/components/item-categorys/item-categorys"
+  }
 }

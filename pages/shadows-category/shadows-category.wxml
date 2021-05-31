@@ -1,12 +1,15 @@
 <!--pages/shadows-category/shadows-category.wxml-->
-<mp-tabs tabs="{{tabs}}" swiper-class="tab-class" active-class="tab-bar-title__selected">
-    <block wx:for="{{tabDataSrc}}" wx:key="tab" wx:for-item="tabSrc"  wx:for-index="dataSrcIdx" >
-        <scroll-view scroll-y="true" style="height:100%" slot="tab-content-{{dataSrcIdx}}">
-            <view class="tab-content">
-                <block class="item" wx:for="{{tabSrc}}" wx:key="item" wx:for-index="dataIdx" wx:for-item="itemObj">
-                    <item-categorys idx="{{itemObj.idx}}" icon="{{itemObj.icon}}" name="{{itemObj.name}}"></item-categorys>
-                </block>
-            </view>
-        </scroll-view>
-    </block>
-</mp-tabs>
+<!-- 残影总览 -->
+<vtabs-categorys bind:changeIdx="bindVtabClick">
+    <mp-tabs tabs="{{tabs}}" swiper-class="tab-class" active-class="tab-bar-title__selected">
+        <block wx:for="{{tabDataSrc}}" wx:key="tab" wx:for-item="tabSrc"  wx:for-index="dataSrcIdx" >
+            <scroll-view scroll-y="true" style="height: 100%;" slot="tab-content-{{dataSrcIdx}}">
+                <view class="tab-content">
+                    <block class="item" wx:for="{{tabSrc}}" wx:key="item" wx:for-index="dataIdx" wx:for-item="itemObj">
+                        <item-categorys idx="{{itemObj.idx}}" icon="{{itemObj.icon}}" name="{{itemObj.name}}" type="{{itemObj.type}}"></item-categorys>
+                    </block>
+                </view>
+            </scroll-view>
+        </block>
+    </mp-tabs>
+</vtabs-categorys>

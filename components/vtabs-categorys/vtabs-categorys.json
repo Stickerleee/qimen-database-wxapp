@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "mp-vtabs": "@miniprogram-component-plus/vtabs"
+    }
+}

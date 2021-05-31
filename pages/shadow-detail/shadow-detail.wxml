@@ -1,10 +1,11 @@
 <!--pages/shadow-detail/shadow-detail.wxml-->
+<!-- weapons 和 shadows共用的详情页 -->
 <view class="container">
     <view class="base-info">
-        <base-info-card icon="{{curShadow.icon}}" name="{{curShadow.name}}" property="{{curShadow.property}}" divinatory="{{curShadow.divinatory}}" tags="{{['待定']}}"></base-info-card>
+        <base-info-card icon="{{curDataSrc.icon}}" name="{{curDataSrc.name}}" property="{{curDataSrc.property}}" divinatory="{{curDataSrc.divinatory}}" tags="{{['待定']}}"></base-info-card>
         <view class="effect">
             <view class="second-title">残影效果</view>
-            <text>{{curShadow.effect}}</text>
+            <text>{{curDataSrc.effect}}</text>
         </view>
     </view>
 </view>

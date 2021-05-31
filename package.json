@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/Stickerleee/qimen-database-wxapp#readme",
   "dependencies": {
-    "@miniprogram-component-plus/tabs": "^1.0.0"
+    "@miniprogram-component-plus/tabs": "^1.0.0",
+    "@miniprogram-component-plus/vtabs": "^1.0.0",
+    "@miniprogram-component-plus/vtabs-content": "^1.0.0"
   }
 }

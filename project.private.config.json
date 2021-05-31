@@ -41,6 +41,12 @@
                     "pathName": "pages/weapon-category/weapon-category",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "灵器详情",
+                    "pathName": "pages/shadow-detail/shadow-detail",
+                    "query": "type=weapon&idx=0",
+                    "scene": null
                 }
             ]
         }

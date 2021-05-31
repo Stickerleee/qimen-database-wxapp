@@ -1,7 +1,5 @@
 /* components/item-categorys/item-categorys.wxss */
 .item {
-    width: 200rpx;
-    height: 100rpx;
     display: flex;
 }
 
@@ -15,4 +13,5 @@
     flex: 1;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
 }

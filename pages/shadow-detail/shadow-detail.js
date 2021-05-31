@@ -12,10 +12,14 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (event) {
-        const {idx} = event
-        const curShadow = require('../../data/shadows').shadows.data[idx]
+        const {type, idx} = event
+        // 根据type选择数据来源
+        const srcStr = type==='weapon' ? '../../data/weapons.js' : '../../data/shadows.js'
+        const curData = require(srcStr)
+        // 解包数据
+        const curDataSrc = type==='weapon' ? curData.weapons.data[idx] : curData.shadows.data[idx]
         this.setData({
-            curShadow
+            curDataSrc
         })
     },
 

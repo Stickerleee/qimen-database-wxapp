@@ -1,4 +1,5 @@
 <!--pages/soul-detail/soul-detail.wxml-->
+<!-- 神魂详情页 -->
 <view class="container">
     <view class="info-card">
         <base-info-card icon="{{curItem.icon}}" name="{{curItem.name}}" property="{{curItem.property}}" divinatory="{{curItem.divinatory}}" tags="{{curItem.tags}}"></base-info-card>
