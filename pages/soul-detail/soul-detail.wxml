@@ -2,29 +2,29 @@
 <!-- 神魂详情页 -->
 <view class="container">
     <view class="info-card">
-        <base-info-card icon="{{curItem.icon}}" name="{{curItem.name}}" property="{{curItem.property}}" divinatory="{{curItem.divinatory}}" tags="{{curItem.tags}}"></base-info-card>
+        <base-info-card icon="{{icon}}" name="{{name}}" property="{{property}}" divinatory="{{divinatory}}" tags="{{tags}}"></base-info-card>
         <view class="effect-info">
             <view class="second-title">神魂效果</view>
-            <text>两件效果：{{curItem.effect}}</text>
-            <text>三件效果：{{curItem.effect}}</text>
+            <text>两件效果：{{effect}}</text>
+            <text>三件效果：{{effect1}}</text>
             <view class="second-title">阶级效果</view>
-            <text>每阶级：xxxx</text>
-            <text>20阶级：xxxxx</text>
-            <text>60阶级：xxxxx</text>
+            <text>每阶：{{stepgrow}}</text>
+            <text>20阶：{{step20}}</text>
+            <text>60阶：{{step60}}</text>
             <view class="second-title">满阶效果</view>
-            <text>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</text>
+            <text>{{stepfull}}</text>
         </view>
         <view class="soul-show">
             <view class="second-title">神魂展示</view>
-            <view class="soul-card" wx:for="{{['pic0','pic1','pic2']}}" wx:key="pic">
-                <image src="{{curItem[item]}}"></image>
-                <view class="soul-detail">
-                    <text>一级属性：</text>
-                    <text>xxxxxxxxxxxxxxxxxxxxx</text>
-                    <text>满级属性：</text>
-                    <text>xxxxxxxxxxxxxxxxxxxxx</text>
+            <block wx:for="{{[pic0,pic1,pic2]}}" wx:key="pic">
+                <view class="soul-card" >
+                    <image src="{{item}}" mode="aspectFit" lazy-load="true"></image>
+                    <view class="soul-detail">
+                        <text>满级属性：</text>
+                        <text></text>
+                    </view>
                 </view>
-            </view>
+            </block>
         </view>
     </view>
 </view>

@@ -11,9 +11,9 @@
     font-weight: bold;
 }
 
-
+/* 无法自适应高度，设定一个硬高度 */
 .tab-class {
-    height:100vh;
+    height: 95%;
 }
 
 .tab-content {

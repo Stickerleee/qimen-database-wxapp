@@ -1,7 +1,6 @@
 /* pages/soul-detail/soul-detail.wxss */
 .info-card {
     width:100%;
-    height: 500rpx;
 }
 
 .effect-info {
@@ -10,9 +9,7 @@
 }
 
 .soul-card image {
-    width:250rpx;
-    height:400rpx;
-    padding: 30rpx;
+    padding: 20rpx 0;
 }
 
 .soul-card {

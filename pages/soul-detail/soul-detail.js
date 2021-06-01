@@ -12,11 +12,10 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (event) {
-        const index = event.id
+        const index = event.idx
         const curItem = require('../../data/souls.js').data.data[index]
         this.setData({
-            id:index,
-            curItem:curItem
+            ...curItem
         })
 
     },

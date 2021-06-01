@@ -21,7 +21,7 @@
                 {
                     "name": "神魂详情",
                     "pathName": "pages/soul-detail/soul-detail",
-                    "query": "id=0",
+                    "query": "idx=0",
                     "scene": null
                 },
                 {

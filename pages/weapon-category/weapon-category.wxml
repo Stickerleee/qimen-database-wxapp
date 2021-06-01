@@ -1,8 +1,10 @@
 <!--pages/weapon-category/weapon-category.wxml-->
 <vtabs-categorys bind:changeIdx="bindVtabClick">
-    <view class="categorys">
-        <block wx:for="{{curTabData}}" wx:key="item">
-            <item-categorys idx="{{item.idx}}" icon="{{item.icon}}" name="{{item.name}}" type="{{item.type}}"></item-categorys>
-        </block>
-    </view>
+    <scroll-view scroll-y="true" style="height:100%;">
+        <view class="categorys">
+            <block wx:for="{{curTabData}}" wx:key="item">
+                <item-categorys idx="{{item.idx}}" icon="{{item.icon}}" name="{{item.name}}" type="{{item.type}}"></item-categorys>
+            </block>
+        </view>
+    </scroll-view>  
 </vtabs-categorys>
