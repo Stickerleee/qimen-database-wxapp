@@ -1,8 +1,5 @@
 <!--pages/souls-category/souls-category.wxml-->
 <view class="container">
-    <view class="search">
-        <mp-searchbar search="{{search}}"></mp-searchbar>
-    </view>
     <blcok class="categorys" wx:for="{{categorys}}" wx:for-item="item" wx:key="item" wx:for-index="idx">
         <list-categorys id="{{idx}}" icon="{{item.icon}}" name="{{item.name}}" property="{{item.property}}" divinatory="{{item.divinatory}}" tags="{{item.tags}}"></list-categorys>
     </blcok>

@@ -1,8 +1,6 @@
 <!--index.wxml-->
+<!-- 主页 -->
 <view class="container">
 	<view class="main-title">数据库主页</view>
-	<view class="search">
-		<mp-searchbar></mp-searchbar>
-	</view>
 	<view class="intro">数据库介绍</view>
 </view>
