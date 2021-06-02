@@ -6,8 +6,12 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坤",
-            "icon": "/images/weapons/moyu.png",
-            "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
+            "icon": "/image/weapon/moyu.png",
+            "effect": ["造成暴击时，有50%的几率增加","%的暴击伤害，持续5秒，15秒冷却时间。"],
+            "effectNum":[60],
+            "effectUpdata":["倍率额外+","%"],
+            "effectUpdataNum":[1.5],
+            "tags":["爆发","增益"]
           },
           {
             "idx": 1,
@@ -15,7 +19,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坤",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -24,7 +28,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "巽",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -33,7 +37,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "巽",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -42,7 +46,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "巽",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -51,7 +55,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "兑",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -60,7 +64,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "兑",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -69,7 +73,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "兑",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -78,7 +82,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "震",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -87,7 +91,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "震",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -96,7 +100,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "震",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -105,7 +109,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "艮",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -114,7 +118,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "艮",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -123,7 +127,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "艮",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -132,7 +136,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "艮",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -141,7 +145,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "艮",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -150,7 +154,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "艮",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -159,7 +163,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -168,7 +172,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -177,7 +181,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -186,7 +190,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -195,7 +199,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -204,7 +208,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -213,7 +217,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -222,7 +226,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -231,7 +235,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -240,7 +244,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -249,7 +253,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -258,7 +262,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -267,7 +271,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坎",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -276,7 +280,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "离",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -285,7 +289,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "离",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -294,7 +298,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "乾",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -303,7 +307,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "乾",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           },
           {
@@ -312,7 +316,7 @@ var weapons = {
             "name": "沉香墨玉",
             "property": "水",
             "divinatory": "坤",
-            "icon": "/images/weapons/moyu.png",
+            "icon": "/image/weapon/moyu.png",
             "effect": "造成暴击时，有50%的几率增加150%的暴击伤害，持续5秒，15秒冷却时间。"
           }
     ]

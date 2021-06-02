@@ -1,9 +1,7 @@
 <!--components/base-info-card/base-info-card.wxml-->
 <!-- 带标签tag的基本信息卡片 -->
 <view class="base-info">
-    <view class="base-image">
-        <image src="{{icon}}" mode="aspectFill"></image>
-    </view>
+    <image src="{{icon}}" mode="aspectFit" style="height: 100%;width:300rpx"></image>
     <view class="base-info-text">
         <view class="name">
             <text class="item-name">{{name}}</text>

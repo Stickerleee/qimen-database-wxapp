@@ -3,6 +3,21 @@
     width:100%;
 }
 
+.effect {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-text {
+    padding: 40rpx 20rpx;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#step-effect {
+    padding: 50rpx 150rpx;
+}
+
 .effect-info {
     display: flex;
     flex-direction: column;

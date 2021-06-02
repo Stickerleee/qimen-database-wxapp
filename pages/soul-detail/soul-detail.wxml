@@ -3,16 +3,22 @@
 <view class="container">
     <view class="info-card">
         <base-info-card icon="{{icon}}" name="{{name}}" property="{{property}}" divinatory="{{divinatory}}" tags="{{tags}}"></base-info-card>
-        <view class="effect-info">
+        <view class="effect">
             <view class="second-title">神魂效果</view>
-            <text>两件效果：{{effect}}</text>
-            <text>三件效果：{{effect1}}</text>
+            <view class="info-text">
+                <text>两件效果：</text><text>{{effect}}</text>
+                <text>三件效果：</text><text>{{effect1}}</text>
+            </view>
             <view class="second-title">阶级效果</view>
-            <text>每阶：{{stepgrow}}</text>
-            <text>20阶：{{step20}}</text>
-            <text>60阶：{{step60}}</text>
+            <view class="info-text" id="step-effect">
+                    <text>每阶：</text><text>{{stepgrow}}</text>
+                    <text>20阶：</text><text>{{step20}}</text>
+                    <text>60阶：</text><text>{{step60}}</text>
+            </view>
             <view class="second-title">满阶效果</view>
-            <text>{{stepfull}}</text>
+            <view class="info-text">
+                <text>{{stepfull}}</text>
+            </view>
         </view>
         <view class="soul-show">
             <view class="second-title">神魂展示</view>

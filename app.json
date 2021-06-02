@@ -28,22 +28,26 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "首页",
-                "iconPath": "images/icon/home.png"
+                "iconPath": "image/tabbar/home.png",
+                "selectedIconPath": "image/tabbar/home.png"
             },
             {
                 "pagePath": "pages/souls-category/souls-category",
                 "text": "神魂",
-                "iconPath": "images/icon/home.png"
+                "iconPath": "image/tabbar/soul.png",
+                "selectedIconPath": "image/tabbar/soul.png"
             },
             {
                 "pagePath": "pages/weapon-category/weapon-category",
                 "text": "灵器",
-                "iconPath": "images/icon/home.png"
+                "iconPath": "image/tabbar/weapon.png",
+                "selectedIconPath": "image/tabbar/weapon.png"
             },
             {
                 "pagePath": "pages/shadows-category/shadows-category",
                 "text": "残影",
-                "iconPath": "images/icon/home.png"
+                "iconPath": "image/tabbar/shadow.png",
+                "selectedIconPath": "image/tabbar/shadow.png"
             }
         ]
     }

@@ -1,0 +1,26 @@
+<!--components/item-advanced-info/item-advanced-info.wxml-->
+<view class="advanced-info">
+    <view class="effect">
+        <view class="second-title">相关效果</view>
+        <view class="info-text">
+            {{baseEffect}}
+        </view>
+    </view>
+    <view class="effect">
+        <view class="second-title">强化属性</view>
+        <view class="switch-container">
+            <view class="switch">
+                <switch checked="{{switchMaxLvl}}" bindchange="switchChangeLvl"/>
+                <text>满强化：{{effectUp}}</text> 
+            </view>
+            <view class="switch" wx:if="{{type!=='weapon'}}">
+                <switch checked="{{switchMaxStack}}" bindchange="switchChangeStack"/>
+                <text>满叠加/献祭：{{stackUp}}</text>
+            </view>
+        </view>
+        <view class="info-text">
+            {{maxEffect}}
+        </view>
+    </view>
+    
+</view>

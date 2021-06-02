@@ -31,9 +31,9 @@
                     "scene": null
                 },
                 {
-                    "name": "残影详情",
+                    "name": "残影详情1",
                     "pathName": "pages/shadow-detail/shadow-detail",
-                    "query": "idx=0",
+                    "query": "type=shadow&idx=1",
                     "scene": null
                 },
                 {
@@ -46,6 +46,12 @@
                     "name": "灵器详情",
                     "pathName": "pages/shadow-detail/shadow-detail",
                     "query": "type=weapon&idx=0",
+                    "scene": null
+                },
+                {
+                    "name": "残影详情0",
+                    "pathName": "pages/shadow-detail/shadow-detail",
+                    "query": "type=shadow&idx=0",
                     "scene": null
                 }
             ]

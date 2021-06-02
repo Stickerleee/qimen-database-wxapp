@@ -2,5 +2,6 @@
   "usingComponents": {
     "vtabs-categorys":"/components/vtabs-categorys/vtabs-categorys",
     "item-categorys":"/components/item-categorys/item-categorys"
-  }
+  },
+  "navigationBarTitleText":"灵器总览"
 }

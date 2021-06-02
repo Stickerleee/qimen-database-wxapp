@@ -4,22 +4,21 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: { 
+    data: {
 
     },
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (event) {
         const {type, idx} = event
         // 根据type选择数据来源
-        const srcStr = type==='weapon' ? '../../data/weapons.js' : '../../data/shadows.js'
+        const srcStr = '../../data/'+ type +'s.js'
+        // 重新拉取详细数据（应该为只拉取目标数据）
         const curData = require(srcStr)
-        // 解包数据
         const curDataSrc = type==='weapon' ? curData.weapons.data[idx] : curData.shadows.data[idx]
         this.setData({
-            curDataSrc
+            ...curDataSrc
         })
     },
 

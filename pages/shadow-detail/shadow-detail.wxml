@@ -2,10 +2,17 @@
 <!-- weapons 和 shadows共用的详情页 -->
 <view class="container">
     <view class="base-info">
-        <base-info-card icon="{{curDataSrc.icon}}" name="{{curDataSrc.name}}" property="{{curDataSrc.property}}" divinatory="{{curDataSrc.divinatory}}" tags="{{['待定']}}"></base-info-card>
-        <view class="effect">
-            <view class="second-title">残影效果</view>
-            <text>{{curDataSrc.effect}}</text>
-        </view>
+        <base-info-card icon="{{icon}}" name="{{name}}" property="{{property}}" divinatory="{{divinatory}}" tags="{{tags}}"/>
+    </view>
+    <view class="advanced-info">
+    <item-advanced-info
+        type="{{type}}"
+        effect="{{effect}}"
+        effectNum="{{effectNum}}"
+        effectUpdata="{{effectUpdata}}"
+        effectUpdataNum="{{effectUpdataNum}}"
+        stackUpdata="{{stackUpdata}}"
+        stackUpdataNum="{{stackUpdataNum}}"
+    />
     </view>
 </view>
