@@ -18,17 +18,27 @@ Page({
 			curIdx:nextIdx,
 			curTabData:filterWeapons
 		})
+	},
+	// 云端获取灵器目录
+    async getWeaponCate(){
+    	const db = wx.cloud.database()
+		const allWeapons = (await db.collection('weapon').get()).data
+		this.setData({
+			allWeapons,
+			curTabData:allWeapons
+		})
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-		const allWeapons = require('../../data/weapons').weapons.data
-		this.setData({
-			allWeapons,
-			curTabData:allWeapons
-		})
+		// const allWeapons = require('../../data/weapons').weapons.data
+		// this.setData({
+		// 	allWeapons,
+		// 	curTabData:allWeapons
+		// })
+		this.getWeaponCate()
     },
 
     /**

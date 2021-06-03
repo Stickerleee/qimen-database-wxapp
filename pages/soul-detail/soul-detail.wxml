@@ -22,12 +22,13 @@
         </view>
         <view class="soul-show">
             <view class="second-title">神魂展示</view>
-            <block wx:for="{{[pic0,pic1,pic2]}}" wx:key="pic">
+            <block wx:for="{{soulShowbundle}}" wx:key="pic">
                 <view class="soul-card" >
-                    <image src="{{item}}" mode="aspectFit" lazy-load="true"></image>
+                    <image src="{{item.pic}}" mode="aspectFit" lazy-load="true" style="max-width: 100%; max-height: 100%;"></image>
                     <view class="soul-detail">
-                        <text>满级属性：</text>
-                        <text></text>
+                        <text>{{item.name}}</text>
+                        <text>\n</text>
+                        <text>满级属性：{{item.text}}</text>
                     </view>
                 </view>
             </block>

@@ -14,8 +14,10 @@ Page({
     onLoad: function (event) {
         const index = event.idx
         const curItem = require('../../data/souls.js').data.data[index]
+        const {pic0,pic1,pic2,text0,text1,text2} = curItem
         this.setData({
-            ...curItem
+            ...curItem,
+            soulShowbundle:[{name:"神魂 · 上",pic:pic0,text:text0},{name:"神魂 · 中",pic:pic1,text:text1},{name:"神魂 · 下",pic:pic2,text:text2}]
         })
 
     },

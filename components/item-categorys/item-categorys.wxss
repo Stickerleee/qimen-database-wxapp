@@ -1,17 +1,16 @@
 /* components/item-categorys/item-categorys.wxss */
 .item {
     display: flex;
-}
-
-.item image {
-    width: 100rpx;
     height: 100rpx;
+    margin: 25rpx 0;
+    width: 250rpx;
 }
 
 .item-info {
     display: flex;
-    flex: 1;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+
 }

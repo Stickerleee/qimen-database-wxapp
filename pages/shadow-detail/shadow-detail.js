@@ -1,11 +1,14 @@
 // pages/shadow-detail/shadow-detail.js
+
+const getBaguaIcon = require('../../utils/util').getBaguaIcon
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        greatNum:['壹','贰','叁','肆','伍']
     },
     /**
      * 生命周期函数--监听页面加载
@@ -14,11 +17,13 @@ Page({
         const {type, idx} = event
         // 根据type选择数据来源
         const srcStr = '../../data/'+ type +'s.js'
-        // 重新拉取详细数据（应该为只拉取目标数据）
+        // 重新拉取详细数据（若有数据库则应该只拉取目标数据）
         const curData = require(srcStr)
         const curDataSrc = type==='weapon' ? curData.weapons.data[idx] : curData.shadows.data[idx]
+        const {divinatory} = curDataSrc
         this.setData({
-            ...curDataSrc
+            ...curDataSrc,
+            baguaIcon:"/image/bagua/icon/"+ getBaguaIcon(divinatory) + ".png"
         })
     },
 

@@ -1,4 +1,6 @@
-const { shadows } = require('../../data/shadows')
+const {diviName} = require('../../utils/util')
+const util = require('../../utils/util')
+// const db = require('../../utils/db')
 
 // pages/shadows-category/shadows-category.js
 Page({
@@ -14,8 +16,9 @@ Page({
 	},
 	// 侧边栏点击触发函数
     bindVtabClick: function(e) {
+        // 获得索引值
 		const nextIdx = e.detail.detail.index
-		const str = e.detail.title
+        const str = diviName[nextIdx-1]
         this.loadDiviItems(this.data.allshadows,str,nextIdx)
     },
     // 根据对象数据和卦象过滤出相关残影,并同步数据
@@ -29,24 +32,36 @@ Page({
         })
     },
 
+    // 云端获取残影数据
+    async getCategory(){
+        const db = wx.cloud.database()
+        const allshadows = (await db.collection('shadow').get()).data
+        const positivShadows = allshadows.filter((item)=>item.class==='positiv')
+        const negativShadows = allshadows.filter((item)=>item.class==='negativ')
+        this.setData({
+            allshadows,
+            tabDataSrc:[positivShadows,negativShadows]
+        })
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        const allshadows = require('../../data/shadows').shadows.data
-        const positivShadows = allshadows.filter((item)=>item.class==='positiv')
-        const negativShadows = allshadows.filter((item)=>item.class==='negativ')
-        this.setData({
-          	allshadows,
-            tabDataSrc:[positivShadows,negativShadows]
-        })
+        // const allshadows = require('../../data/shadows').shadows.data
+        // const positivShadows = allshadows.filter((item)=>item.class==='positiv')
+        // const negativShadows = allshadows.filter((item)=>item.class==='negativ')
+        // this.setData({
+        //   	allshadows,
+        //     tabDataSrc:[positivShadows,negativShadows]
+        // })
+        this.getCategory()
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
     },
 
     /**

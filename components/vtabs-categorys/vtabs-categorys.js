@@ -11,7 +11,8 @@ Component({
      */
     data: {
         vtabs:[{
-            "title": "全部"
+            "title": "全部",
+            "title1":"all"
           },
           {
             "title": "乾"

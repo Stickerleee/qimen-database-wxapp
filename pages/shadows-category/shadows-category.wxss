@@ -17,8 +17,8 @@
 }
 
 .tab-content {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 40rpx;
+    display: flex;
+    flex-wrap: wrap;
     padding: 30rpx;
+    justify-content: space-between;
 }

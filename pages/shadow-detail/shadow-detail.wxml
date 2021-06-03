@@ -5,14 +5,64 @@
         <base-info-card icon="{{icon}}" name="{{name}}" property="{{property}}" divinatory="{{divinatory}}" tags="{{tags}}"/>
     </view>
     <view class="advanced-info">
-    <item-advanced-info
-        type="{{type}}"
-        effect="{{effect}}"
-        effectNum="{{effectNum}}"
-        effectUpdata="{{effectUpdata}}"
-        effectUpdataNum="{{effectUpdataNum}}"
-        stackUpdata="{{stackUpdata}}"
-        stackUpdataNum="{{stackUpdataNum}}"
-    />
+        <view class="effect">
+            <view class="second-title" id="spec-effect">装备效果</view>
+            <view class="effect-card">
+                <view class="effect-icon">
+                    <image src="{{baguaIcon}}" mode="heightFix" style="max-height:100%; max-width:100%;"/>
+                </view>
+                <view class="effect-text">
+                    <text wx:for="{{effect}}" wx:key="effect">{{item}}</text>
+                    <block wx:if="{{vipProp}}" wx:for="{{vipProp}}" wx:key="vipProp">
+                        <text>\n</text>
+                        <text>{{item}}</text>
+                    </block>
+                </view>
+            </view>
+        </view>
+        <view class="effect">
+            <view class="second-title">满强化效果</view>
+            <view class="effect-card">
+                <view class="effect-text">
+                    <text wx:for="{{effectUpdata}}" wx:key="updata">{{item}}</text>
+                </view>
+            </view>
+            <!-- <view class="switch-container">
+                <view class="switch">
+                    <switch checked="{{switchMaxLvl}}" bindchange="switchChangeLvl"/>
+                    <text>满强化：</text>
+                    <text>{{effectUpdata}}</text>
+                </view>
+                <view class="switch" wx:if="{{type!=='weapon'}}">
+                    <switch checked="{{switchMaxStack}}" bindchange="switchChangeStack"/>
+                    <text>满叠加/献祭：</text>
+                    <text>{{stackUpdata}}</text>
+                </view>
+            </view>
+            <view class="info-text">
+                {{maxEffect}}
+            </view> -->
+        </view>
+        <view class="effect" wx:if="{{type!=='weapon'}}">
+            <view class="second-title">满叠加/献祭效果</view>
+            <view class="effect-card">
+                <view class="effect-text">
+                    <text wx:for="{{stackUpdata}}" wx:key="stack">{{item}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="lockEffect" wx:if="{{lockEffect}}">
+        <view class="second-title">解封效果</view>
+        <block wx:for="{{lockEffect}}" wx:for-index="lockIdx">
+            <view class="lock-effect-card effect-card">
+                <view class="lock-effect-icon">
+                    {{greatNum[lockIdx]}}
+                </view>
+                <view class="effect-text">
+                    <text>{{item}}</text>
+                </view>
+            </view>
+        </block>
     </view>
 </view>

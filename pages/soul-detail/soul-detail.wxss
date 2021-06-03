@@ -15,7 +15,7 @@
 }
 
 #step-effect {
-    padding: 50rpx 150rpx;
+    padding: 50rpx 100rpx;
 }
 
 .effect-info {
@@ -23,17 +23,17 @@
     flex-direction: column;
 }
 
-.soul-card image {
-    padding: 20rpx 0;
-}
-
 .soul-card {
-    display: flex;
+    display: grid;
+    padding: 20rpx 0;
+    height: 500rpx;
+    grid-template-columns: 30% 70%;
 }
 .soul-detail {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: 100%;
     align-items: center;
     justify-content: center;
+    padding: 0 10%;
 }

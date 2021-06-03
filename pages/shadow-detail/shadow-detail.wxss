@@ -1,1 +1,24 @@
 /* pages/shadow-detail/shadow-detail.wxss */
+
+.effect-card {
+    display: flex;
+    padding: 25rpx 10rpx;
+}
+
+.effect-icon {
+    height: 120rpx;
+}
+
+.effect-text {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20rpx;
+    justify-content: center;
+}
+
+.lock-effect-icon {
+    font-weight: bolder;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+}
