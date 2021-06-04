@@ -17,6 +17,10 @@ Component({
     data: {
 
     },
+    // 组件样式继承
+    // options: {
+    //     styleIsolation: 'apply-shared'
+    // },
 
     /**
      * 组件的方法列表

@@ -6,7 +6,7 @@
             <scroll-view scroll-y="true" style="height: 100%;" slot="tab-content-{{dataSrcIdx}}">
                 <view class="tab-content">
                     <block class="item" wx:for="{{tabSrc}}" wx:key="item" wx:for-index="dataIdx" wx:for-item="itemObj">
-                        <item-categorys idx="{{itemObj.idx}}" icon="{{itemObj.icon}}" name="{{itemObj.name}}" type="{{itemObj.type}}"></item-categorys>
+                        <item-categorys idx="{{itemObj.idx}}" icon="{{itemObj.icon}}" name="{{itemObj.name}}" type="{{itemObj.type}}" id0="{{itemObj.id}}"></item-categorys>
                     </block>
                 </view>
             </scroll-view>

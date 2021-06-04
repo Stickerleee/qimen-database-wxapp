@@ -1,4 +1,6 @@
 // pages/weapon-category/weapon-category.js
+const db = require('../../utils/db')
+
 Page({
 
     /**
@@ -20,9 +22,8 @@ Page({
 		})
 	},
 	// 云端获取灵器目录
-    async getWeaponCate(){
-    	const db = wx.cloud.database()
-		const allWeapons = (await db.collection('weapon').get()).data
+    getWeaponCate(){
+		  const allWeapons = db.getCategoryByType('weapon')
 		this.setData({
 			allWeapons,
 			curTabData:allWeapons

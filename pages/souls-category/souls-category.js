@@ -1,4 +1,6 @@
 // pages/souls-category/souls-category.js
+const db = require('../../utils/db')
+
 Page({
 
     /**
@@ -9,9 +11,8 @@ Page({
 
 
     // 云端获取神魂数据
-    async getSoulCate(){
-        const db = wx.cloud.database()
-        const categorys = (await db.collection('soul').get()).data
+    getSoulCate(){
+        const categorys = db.getCategoryByType('soul')
         this.setData({
             categorys
         })
@@ -20,11 +21,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        // 加载数据
-        // const categorys = require('../../data/souls.js').data.data
-        // this.setData({
-        //     categorys
-        // })
         this.getSoulCate()
     },
 

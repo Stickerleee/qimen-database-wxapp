@@ -4,6 +4,7 @@ Component({
      * 组件的属性列表
      */
     properties: {
+        id0:Number,
         idx:Number,
         icon:String,
         name:String,
@@ -24,7 +25,7 @@ Component({
         showDetail:function(){
             // 根据类型跳转到相关页面
             wx.navigateTo({
-              url: '/pages/shadow-detail/shadow-detail?type=' + this.properties.type +'&idx=' + this.properties.idx
+              url: '/pages/shadow-detail/shadow-detail?type=' + this.properties.type +'&id=' + this.properties.id0
             })
         }
     }

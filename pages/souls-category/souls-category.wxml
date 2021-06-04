@@ -1,6 +1,6 @@
 <!--pages/souls-category/souls-category.wxml-->
 <view class="container">
     <blcok class="categorys" wx:for="{{categorys}}" wx:for-item="item" wx:key="item" wx:for-index="idx">
-        <list-categorys idx="{{idx}}" icon="{{item.icon}}" name="{{item.name}}" property="{{item.property}}" divinatory="{{item.divinatory}}" tags="{{item.tags}}"></list-categorys>
+        <list-categorys idx="{{idx}}" icon="{{item.icon}}" name="{{item.name}}" property="{{item.property}}" divinatory="{{item.divinatory}}" tags="{{item.tags}}" type="{{item.type}}" id0="{{item.id}}"></list-categorys>
     </blcok>
 </view>

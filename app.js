@@ -1,12 +1,16 @@
 // app.js
+
+
+const db = require('./utils/db')
+
 App({
   onLaunch() {
-    wx.cloud.init()
+    
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    this.initData()
     // 登录
     wx.login({
       success: res => {
@@ -16,5 +20,10 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+ initData(){
+    const {soul, weapon, shadow} = db.getAlldata()
+    this.globalData = {soul, weapon, shadow}
+    console.log('globalData',this.globalData)
   }
 })

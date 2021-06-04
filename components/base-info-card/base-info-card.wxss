@@ -1,15 +1,19 @@
 /* components/base-info-card/base-info-card.wxss */
 .base-info {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 30% 70%;
-    max-height: 100%;
-    padding: 20rpx 0;
+    max-width: 100%;
+    display: flex;
+    max-height: 250rpx;
+    padding: 30rpx 15rpx;
 }
 
 .base-info-text {
-    padding-left: 50rpx;
+    padding: 0 40rpx;
     width: 100%;
+    
+}
+
+.name {
+    border-bottom: 1rpx solid rgb(218, 218, 218); 
 }
 
 .item-name {
@@ -18,7 +22,7 @@
 
 .tags {
     padding: 20rpx 0;
-    width: 70%;
+    max-width: 70%;
     display: flex;
     justify-content: space-around;
 }

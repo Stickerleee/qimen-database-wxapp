@@ -54,7 +54,7 @@
     </view>
     <view class="lockEffect" wx:if="{{lockEffect}}">
         <view class="second-title">解封效果</view>
-        <block wx:for="{{lockEffect}}" wx:for-index="lockIdx">
+        <block wx:for="{{lockEffect}}" wx:for-index="lockIdx" wx:key="lock">
             <view class="lock-effect-card effect-card">
                 <view class="lock-effect-icon">
                     {{greatNum[lockIdx]}}

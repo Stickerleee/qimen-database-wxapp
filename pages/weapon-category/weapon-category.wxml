@@ -3,7 +3,7 @@
     <scroll-view scroll-y="true" style="height:100%;">
         <view class="categorys">
             <block wx:for="{{curTabData}}" wx:key="item">
-                <item-categorys idx="{{item.idx}}" icon="{{item.icon}}" name="{{item.name}}" type="{{item.type}}"></item-categorys>
+                <item-categorys id0="{{item.id}}" idx="{{item.idx}}" icon="{{item.icon}}" name="{{item.name}}" type="{{item.type}}"></item-categorys>
             </block>
         </view>
     </scroll-view>  

@@ -1,4 +1,6 @@
 // pages/soul-detail/soul-detail.js
+const db = require('../../utils/db')
+
 Page({
 
     /**
@@ -8,17 +10,39 @@ Page({
 
     },
 
+    // async getSoulDetail(id){
+    //     const db = wx.cloud.database()
+    //     const _ = db.command
+    //     const detail = (db.collection('soul').where({
+    //         id: _.eq(id)
+    //     }).get()).data[0]
+    //     const {pic0,pic1,pic2,text0,text1,text2} = detail
+    //     this.setData({
+    //         ...detail,
+    //         soulShowbundle:[{name:"神魂 · 上",pic:pic0,text:text0},{name:"神魂 · 中",pic:pic1,text:text1},{name:"神魂 · 下",pic:pic2,text:text2}]
+    //     })
+    // },
+
+    getSoulDetail(id){
+        const detail =  db.getSoulDetailById(id)
+        const {pic0,pic1,pic2,text0,text1,text2} = detail
+        this.setData({
+            ...detail,
+            soulShowbundle:[{name:"神魂 · 上",pic:pic0,text:text0},{name:"神魂 · 中",pic:pic1,text:text1},{name:"神魂 · 下",pic:pic2,text:text2}]
+        })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (event) {
-        const index = event.idx
-        const curItem = require('../../data/souls.js').data.data[index]
-        const {pic0,pic1,pic2,text0,text1,text2} = curItem
-        this.setData({
-            ...curItem,
-            soulShowbundle:[{name:"神魂 · 上",pic:pic0,text:text0},{name:"神魂 · 中",pic:pic1,text:text1},{name:"神魂 · 下",pic:pic2,text:text2}]
-        })
+        const id0 = event.id
+        this.getSoulDetail(id0)
+        // const curItem = require('../../data/souls.js').data.data[index]
+        // const {pic0,pic1,pic2,text0,text1,text2} = curItem
+        // this.setData({
+        //     ...curItem,
+        //     soulShowbundle:[{name:"神魂 · 上",pic:pic0,text:text0},{name:"神魂 · 中",pic:pic1,text:text1},{name:"神魂 · 下",pic:pic2,text:text2}]
+        // })
 
     },
 

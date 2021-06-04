@@ -9,14 +9,14 @@
 }
 
 .info-text {
-    padding: 40rpx 20rpx;
+    padding: 20rpx 0;
+    margin: 0rpx 30rpx;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 20% auto;
+    border-bottom: 1rpx solid rgb(218, 218, 218); 
 }
 
-#step-effect {
-    padding: 50rpx 100rpx;
-}
+
 
 .effect-info {
     display: flex;
@@ -25,7 +25,6 @@
 
 .soul-card {
     display: grid;
-    padding: 20rpx 0;
     height: 500rpx;
     grid-template-columns: 30% 70%;
 }
