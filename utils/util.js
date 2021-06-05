@@ -63,11 +63,35 @@ function getBaguaIcon(str) {
             
     }
 }
+// 卦象与颜色
+function getBaguaColor(str) {
+	switch (str) {
+        case '乾': return '#A5C2D2';
+            
+        case '坤': return '#D7AA19';
+            
+        case '离': return '#E45847';
+            
+        case '坎': return '#619DFF';
+            
+        case '震': return '#8B72F6';
+            
+        case '巽': return '#1FCBB2';
+            
+        case '艮': return '#D77405';
+            
+        case '兑': return '#7AD52D';
+            
+        default: return
+            
+    }
+}
 // 卦象名数组
 const diviName = ['乾','坤','离','坎','震','巽','艮','兑']
     
 
 module.exports = {
     getBaguaIcon,
-    diviName
+    diviName,
+    getBaguaColor
 }

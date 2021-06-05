@@ -2,7 +2,7 @@
 <!-- 带标签tag的基本信息卡片 -->
 <view class="base-info effect-card">
     <view class="image">
-        <image src="{{icon}}" mode="heightFix" lazy-load="true" style="max-width: 100%; max-height: 100%;" alt="icon"/>
+        <image src="{{icon}}" mode="widthFix" lazy-load="true" style="max-width: 100%; max-height: 100%;" alt="icon"/>
     </view>
     <view class="base-info-text">
         <view class="name">

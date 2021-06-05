@@ -6,7 +6,8 @@
         "pages/soul-detail/soul-detail",
         "pages/weapon-category/weapon-category",
         "pages/shadows-category/shadows-category",
-        "pages/shadow-detail/shadow-detail"
+        "pages/shadow-detail/shadow-detail",
+        "pages/simulator/simulator"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -46,6 +47,12 @@
             {
                 "pagePath": "pages/shadows-category/shadows-category",
                 "text": "残影",
+                "iconPath": "image/tabbar/shadow.png",
+                "selectedIconPath": "image/tabbar/shadow.png"
+            },
+            {
+                "pagePath": "pages/simulator/simulator",
+                "text": "模拟器",
                 "iconPath": "image/tabbar/shadow.png",
                 "selectedIconPath": "image/tabbar/shadow.png"
             }

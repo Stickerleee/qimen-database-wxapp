@@ -8,7 +8,8 @@ Component({
         name:String,
         property:String,
         divinatory:String,
-        tags:Array
+        tags:Array,
+        color: String
     },
 
     /**

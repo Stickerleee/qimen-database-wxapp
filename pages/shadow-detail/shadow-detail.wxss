@@ -1,24 +1,52 @@
 /* pages/shadow-detail/shadow-detail.wxss */
 
-.effect-card {
-    display: flex;
-    padding: 25rpx 10rpx;
-}
-
 .effect-icon {
     height: 120rpx;
 }
+.info-text {
+    padding: 20rpx 0;
+    margin: 0rpx 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1rpx solid rgb(218, 218, 218); 
+    flex-direction: column;
+  }
 
-.effect-text {
+  .with-icon {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content auto;
+  }
+
+  #inner-text {
+    border-bottom: 0rpx;
+    align-items: flex-start;
+  }
+
+
+
+/* .effect-text {
     display: flex;
     flex-direction: column;
     padding: 0 20rpx;
     justify-content: center;
+} */
+
+.icon-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
+
 
 .lock-effect-icon {
     font-weight: bolder;
     font-size: xx-large;
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 100rpx;
+    width: 100rpx;
+    border: 1rpx solid black;
 }

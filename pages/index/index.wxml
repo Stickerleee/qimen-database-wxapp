@@ -3,4 +3,5 @@
 <view class="container">
 	<view class="main-title">数据库主页</view>
 	<view class="intro">数据库介绍</view>
+	<color-effect str="造成暴击时，有100%的几率增加60%的暴击伤害，持续5秒，20秒冷却时间。雷攻雷防+20." color="#1FCBB2"/>
 </view>

@@ -1,0 +1,7 @@
+<!-- 
+    str: String,
+    color: color
+ -->
+<template name="color-text">
+    <text style="color:{{color}}; font-weight:bold" > {{str}} </text>
+</template>

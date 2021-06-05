@@ -25,12 +25,6 @@
                     "scene": null
                 },
                 {
-                    "name": "残影详情1",
-                    "pathName": "pages/shadow-detail/shadow-detail",
-                    "query": "type=shadow&idx=1",
-                    "scene": null
-                },
-                {
                     "name": "灵器总览",
                     "pathName": "pages/weapon-category/weapon-category",
                     "query": "",
@@ -45,13 +39,19 @@
                 {
                     "name": "残影详情0",
                     "pathName": "pages/shadow-detail/shadow-detail",
-                    "query": "type=shadow&id=62003",
+                    "query": "type=shadow&id=5111",
                     "scene": null
                 },
                 {
                     "name": "神魂详情页",
                     "pathName": "pages/soul-detail/soul-detail",
                     "query": "type=soul&id=5111",
+                    "scene": null
+                },
+                {
+                    "name": "模拟器",
+                    "pathName": "pages/simulator/simulator",
+                    "query": "",
                     "scene": null
                 }
             ]

@@ -1,5 +1,6 @@
 // pages/soul-detail/soul-detail.js
 const db = require('../../utils/db')
+const util = require('../../utils/util')
 
 Page({
 
@@ -25,9 +26,10 @@ Page({
 
     getSoulDetail(id){
         const detail =  db.getSoulDetailById(id)
-        const {pic0,pic1,pic2,text0,text1,text2} = detail
+        const {pic0,pic1,pic2,text0,text1,text2,divinatory} = detail
         this.setData({
             ...detail,
+            color: util.getBaguaColor(divinatory),
             soulShowbundle:[{name:"神魂 · 上",pic:pic0,text:text0},{name:"神魂 · 中",pic:pic1,text:text1},{name:"神魂 · 下",pic:pic2,text:text2}]
         })
     },
@@ -37,13 +39,6 @@ Page({
     onLoad: function (event) {
         const id0 = event.id
         this.getSoulDetail(id0)
-        // const curItem = require('../../data/souls.js').data.data[index]
-        // const {pic0,pic1,pic2,text0,text1,text2} = curItem
-        // this.setData({
-        //     ...curItem,
-        //     soulShowbundle:[{name:"神魂 · 上",pic:pic0,text:text0},{name:"神魂 · 中",pic:pic1,text:text1},{name:"神魂 · 下",pic:pic2,text:text2}]
-        // })
-
     },
 
     /**

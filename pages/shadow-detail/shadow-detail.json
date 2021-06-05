@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "base-info-card":"/components/base-info-card/base-info-card",
-    "item-advanced-info":"/components/item-advanced-info/item-advanced-info"
+    "item-advanced-info":"/components/item-advanced-info/item-advanced-info",
+    "color-effect": "/components/color-effect/color-effect"
   }
 }

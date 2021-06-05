@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "base-info-card": "/components/base-info-card/base-info-card"
+    "base-info-card": "/components/base-info-card/base-info-card",
+    "color-effect": "/components/color-effect/color-effect"
   },
   "navigationBarTitleText": "神魂详情"
 }

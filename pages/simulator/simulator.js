@@ -1,32 +1,18 @@
-// pages/shadow-detail/shadow-detail.js
-
-const util = require('../../utils/util')
-const db = require('../../utils/db')
-
+// pages/simulator/simulator.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        greatNum:['壹','贰','叁','肆','伍']
+
     },
 
-    // 获取数据详情
-    getItemDetail(type,id){
-        const itemDetail =  db.getItemDetailById(type,id)
-        const {divinatory} = itemDetail
-        this.setData({
-            ...itemDetail,
-            color: util.getBaguaColor(divinatory)
-        })
-    },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (event) {
-        const {type, id} = event
-        this.getItemDetail(type,id)
+    onLoad: function (options) {
+
     },
 
     /**

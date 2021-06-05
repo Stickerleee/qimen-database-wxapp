@@ -3,25 +3,14 @@
     width:100%;
 }
 
-.effect {
-    display: flex;
-    flex-direction: column;
-}
-
 .info-text {
     padding: 20rpx 0;
     margin: 0rpx 30rpx;
     display: grid;
     grid-template-columns: 20% auto;
     border-bottom: 1rpx solid rgb(218, 218, 218); 
-}
+  }
 
-
-
-.effect-info {
-    display: flex;
-    flex-direction: column;
-}
 
 .soul-card {
     display: grid;

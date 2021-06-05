@@ -12,31 +12,39 @@ Component({
     data: {
         vtabs:[{
             "title": "全部",
-            "title1":"all"
+            "title1":"0"
           },
           {
-            "title": "乾"
+            "title": "攻击",
+            "title1": "乾",
           },
           {
-            "title": "坤"
+            "title": "防御",
+            "title1": "坤"
           },
           {
-            "title": "离"
+            "title": "火系",
+            "title1": "离"
           },
           {
-            "title": "坎"
+            "title": "水系",
+            "title1": "坎"
           },
           {
-            "title": "震"
+            "title": "雷系",
+            "title1": "震"
           },
           {
-            "title": "巽"
+            "title": "风系",
+            "title1": "巽"
           },
           {
-            "title": "艮"
+            "title": "土系",
+            "title1": "艮"
           },
           {
-            "title": "兑"
+            "title": "治愈",
+            "title1": "兑"
           }],
         tabDataSrc:[], //当前渲染数据
     },
@@ -47,7 +55,7 @@ Component({
     methods: {
 		// 外部传入的回调函数
 		changeIdx(e){
-			e.title = this.data.vtabs[e.detail.index].title
+			e.title = this.data.vtabs[e.detail.index].title1
 			this.triggerEvent("changeIdx",e,{})
 		}
     }

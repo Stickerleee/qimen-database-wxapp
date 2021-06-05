@@ -1,0 +1,7 @@
+<!--components/color-effect/color-effect.wxml-->
+<!-- 将效果中的百分比和加减法转换为彩色字体 -->
+<import src="/template/color-text.wxml"/>
+<block wx:for="numArr" wx:for-index="idx" wx:key="colorStr">
+    <text>{{strArr[idx]}}</text>
+    <template is="color-text" data="{{str:numArr[idx],color:color}}"/>
+</block>

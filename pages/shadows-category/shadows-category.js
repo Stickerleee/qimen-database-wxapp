@@ -16,9 +16,9 @@ Page({
 	// 侧边栏点击触发目录更新
     bindVtabClick: function(e) {
         // 获得索引值
-		const nextIdx = e.detail.detail.index
-        const str = util.diviName[nextIdx-1]
-        this.loadDiviItems(this.data.allshadows,str,nextIdx)
+        const nextIdx = e.detail.detail.index
+        const diviName = e.detail.title
+        this.loadDiviItems(this.data.allshadows,diviName,nextIdx)
     },
 
     // 分类主动和被动残影

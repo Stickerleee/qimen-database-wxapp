@@ -13,7 +13,7 @@
             <text>{{divinatory}}</text>
         </view>
         <view class="tags">
-            <button class="mini-btn" type="default" size="mini" disabled="true" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</button>
+            <button class="btn" type="default" size="mini" disabled="true" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</button>
         </view>
     </view>
 </view>
