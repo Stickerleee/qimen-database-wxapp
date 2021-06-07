@@ -1,0 +1,26 @@
+<!-- 带标签tag的基本信息卡片 -->
+<!-- 
+    icon:String,
+    name:String,
+    property:String,
+    divinatory:String,
+    tags:Array,
+    color: String
+ -->
+<view class="base-info effect-card">
+    <view class="image">
+        <image src="{{icon}}" mode="widthFix" lazy-load="true" style="max-width: 100%; max-height: 100%;" alt="icon"/>
+    </view>
+    <view class="base-info-text">
+        <view class="name">
+            <text class="item-name">{{name}}</text>
+            <text> | </text>
+            <text>{{property}}</text>
+            <text> | </text>
+            <text>{{divinatory}}</text>
+        </view>
+        <view class="tags">
+            <button class="mini-btn" type="default" size="mini" disabled="true" wx:for="{{tags}}" wx:for-item="tag" wx:key="tag">{{tag}}</button>
+        </view>
+    </view>
+</view>

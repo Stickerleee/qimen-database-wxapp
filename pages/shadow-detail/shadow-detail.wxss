@@ -2,6 +2,7 @@
 
 .effect-icon {
     height: 120rpx;
+    width: 120rpx;
 }
 .info-text {
     padding: 20rpx 0;
