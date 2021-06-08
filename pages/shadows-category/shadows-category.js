@@ -39,12 +39,10 @@ Page({
         })
     },
 
-    // 云端获取残影数据
+    // 云端/本地获取残影数据
     getCategory(){
         const allshadows = db.getCategoryByType('shadow')
-        console.log('local',allshadows)
         const tabDataSrc = this.filterPosAndNeg(allshadows)
-        console.log('local',tabDataSrc)
         this.setData({
             allshadows,
             tabDataSrc

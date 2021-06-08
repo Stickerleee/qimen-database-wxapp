@@ -89,9 +89,16 @@ function getBaguaColor(str) {
 // 卦象名数组
 const diviName = ['乾','坤','离','坎','震','巽','艮','兑']
     
+// 根据卦象分类数据
+// 返回一个数组，包含八个小数组
+// foo应为一个数组，包含对象数据
+function sortedByDivi0(foo){
+  return diviName.map((title)=>foo.filter((item)=>item.divinatory===title))
+}
 
 module.exports = {
     getBaguaIcon,
     diviName,
-    getBaguaColor
+    getBaguaColor,
+    sortedByDivi0
 }

@@ -19,7 +19,6 @@
 function getAlldata(){
     // result为一个数组
     const result = require('../data/data').data
-    console.log(result)
     const soul = result.filter((item)=>item.type==='soul')[0].category
     const weapon = result.filter((item)=>item.type==='weapon')[0].category
     const shadow = result.filter((item)=>item.type==='shadow')[0].category

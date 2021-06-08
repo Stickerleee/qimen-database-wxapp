@@ -24,6 +24,6 @@ App({
  initData(){
     const {soul, weapon, shadow} = db.getAlldata()
     this.globalData = {soul, weapon, shadow}
-    console.log('globalData',this.globalData)
+    console.log('localData set global: ',this.globalData)
   }
 })

@@ -79,24 +79,24 @@
 .shadow-img {
     display: flex;
     justify-content: space-around;
-    padding: 10rpx 20rpx;
+    padding: 20rpx 20rpx;
     width: 100%;
     align-items: center;
 }
 
 .shadow-unit {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 100%;
     border-bottom: 1rpx solid black;
 }
+
 
 .selector {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100%;
+    max-width: 130rpx;
 }
 
 #selector-large {
@@ -118,5 +118,36 @@
 .img {
     height: 120rpx;
     width: 120rpx;
-    background-color: gray;
+}
+
+.grey-bg {
+    background-color: rgba(212, 212, 212, 0.678);
+    height: 100%;
+    width: 100%;
+}
+
+.tab-bar-class{
+    padding: 10rpx 20rpx;
+}
+
+.tab-class {
+    height: 320rpx;
+    padding: 20rpx 0;
+}
+
+.tab-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+}
+
+.mini-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10rpx;
+}
+
+.mini-img {
+    height: 100rpx;
+    width: 100rpx;
 }

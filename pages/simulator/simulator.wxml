@@ -7,8 +7,17 @@
     name: 名字
  -->
 <template name="selector">
-    <view class="selector" bindtap="showDetailStatus">
-        <view src="{{src}}" class="img flex-cent" id="selector-{{size}}">img</view>
+    <view class="selector" bindtap="showDetailClick">
+        <view class="img flex-cent" id="selector-{{size}}">
+            <block wx:if="{{icon}}">
+                <image src="{{icon}}" mode="widthFix"/>
+            </block>
+            <block wx:if="{{!icon}}">
+                <view class="grey-bg flex-cent">
+                    <image src="/image/icon/plus.png" mode="widthFix" style="width:50rpx; height: 50rpx; opacity:0.3"/>
+                </view>
+            </block>
+        </view>
         <text>{{name}}</text>
     </view>
 </template>
@@ -19,9 +28,23 @@
 <template name="title">
     <view class="title flex-btw">
         <text>{{title}}</text>
-        <icon>i</icon><text>清空</text>
+        <view bindtap="removeAll" data-datasrc="{{dataSrc}}">
+            <text>清空</text>
+        </view>
     </view>
 </template>
+
+<!-- 
+    小图标
+ -->
+ <template name="miniItem">
+    <view class="mini-item">
+        <view class="mini-img">
+            <image src="{{icon}}" mode="widthFix" style="max-height:100%; max-width:100%;"/>
+        </view>
+        <text>{{name}}</text>
+    </view>
+ </template>
 
 <!-- 详情页遮罩及数据 -->
 <view>
@@ -29,21 +52,34 @@
         <view class="detail-background flex-cent">
             <view class="detail-tab">
                 <view class="detail-container">
-                    <view class="base-info">
-                        <view class="base-info-image flex-cent">
-                            <image src="/image/soul/icon/53122.png" mode="aspectFit" lazy-load="true"/>
+                    <block wx:if="{{curitem.name}}">
+                        <view class="base-info">
+                            <view class="base-info-image flex-cent">
+                                <image src="{{curitem.icon}}" mode="aspectFit" lazy-load="true"/>
+                            </view>
+                            <view class="flex-cent">
+                                {{curitem.name}} | {{curitem.property}} | {{curitem.divinatory}}
+                            </view>
                         </view>
-                        <view class="flex-cent">123|123|123</view>
-                    </view>
-                    <view class="effect">
-                        <view>效果</view>
-                        <view>xuoguo+16515</view>
-                        <view>效果1：水电费货币的方法hi的方式话不多说发布会adfafasf</view>
-                    </view>
+                        <view class="effect">
+                            <view>效果</view>
+                            <block wx:for="{{curitem.effect}}" wx:for-item="itemEffect" wx:key="effect">
+                                <view>{{itemEffect}}</view>
+                            </block>
+                        </view>
+                    </block>
+                    <block wx:if="{{!curitem.name}}">
+                        Category
+                    </block>
                 </view>
                 <view class="tab-button">
-                    <view class="flex-cent"  bindtap="showDetailStatus">删除</view>
-                    <view class="flex-cent"  bindtap="showDetailStatus">确定</view>
+                    <block wx:if="{{curitem.name}}">
+                        <view class="flex-cent" bindtap="deleteCurItem">删除</view>
+                    </block>
+                    <block wx:if="{{!curitem.name}}">
+                        <view class="flex-cent">全部移除</view>
+                    </block>
+                    <view class="flex-cent"  bindtap="hideDetailClick">确定</view>
                 </view>
             </view>
         </view>
@@ -53,58 +89,89 @@
 <!-- 页面内容 -->
 <scroll-view scroll-y="true" style="height: 100vh">
     <view class="page-container">
+    <!-- 神魂选择卡，点击加号弹出目录遮罩页，点击遮罩页中的图标可以连续添加，点击遮罩页左下角清空所有选择；点击界面中的物品图标可以跳转到详情遮罩页，显示点击物品的详细信息，点击遮罩页左下角删除当前的物品 -->
         <view class="card">
-            <template is="title" data="{{title:'神魂'}}"/>
+            <template is="title" data="{{title:'神魂',dataSrc:'soul'}}"/>
             <view class="mini-card">
                 <view class="soul-selector flex-btw">
-                    <template is="selector" data="{{size:'large',name:'NAME'}}"/>
-                    <template is="selector" data="{{size:'large',name:'NAME'}}"/>
-                    <template is="selector" data="{{size:'large',name:'NAME'}}"/>
-                    <template is="selector" data="{{size:'large',name:'NAME'}}"/>
-                    <template is="selector" data="{{size:'large',name:'NAME'}}"/>
+                    <!-- <block wx:for="{{soul}}" wx:for-index="soulIdx" wx:for-item="soulItem" wx:key="soul">
+                        <view bindtap="changeCurItem" data-curitem="{{soulItem}}" data-datasrc="soul" data-dataidx="{{soulIdx}}">
+                            <template is="selector" data="{{size:'large',...soulItem}}"/>
+                        </view>
+                    </block> -->
+                    <view class="flex-btw flex-cent">
+                        三件套：
+                        <view bindtap="changeCurItem" data-curitem="{{soul[0]}}" data-datasrc="soul" data-dataidx="0">
+                            <template is="selector" data="{{size:'large',...soul[0],dataSrc:'soul',dataIdx:'0'}}"/>
+                        </view>
+                    </view>
+                    <view class="flex-btw flex-cent">
+                        两件套：
+                        <view bindtap="changeCurItem" data-curitem="{{soul[1]}}" data-datasrc="soul" data-dataidx="1">
+                            <template is="selector" data="{{size:'large',...soul[1]}}"/>
+                        </view>
+                    </view>
                 </view>
             </view>
         </view>
+        <!-- 灵器选择卡，逻辑同上 -->
         <view class="card">
-            <template is="title" data="{{title:'灵器'}}"/>
+            <template is="title" data="{{title:'灵器',dataSrc:'weapon'}}"/>
             <view class="mini-card">
                 <view class="weapon-selector flex-btw">
-                    <block wx:for="{{weapon}}" wx:for-item="{{weaponItem}}" wx:for-index="weaponIdx">
-                        <template is="selector" data="{{size:'normal',name:weapon[weaponIdx].name}}"/>
+                    <block wx:for="{{weapon}}" wx:for-index="weaponIdx" wx:for-item="weaponItem" wx:key="weapon">
+                        <view bindtap="changeCurItem" data-curitem="{{weaponItem}}"  data-datasrc="weapon" data-dataidx="{{weaponIdx}}">
+                            <template is="selector" data="{{size:'normal',...weaponItem}}"/>
+                        </view>
                     </block>
                 </view>
             </view>
         </view>
+        <!-- 残影选择卡 -->
+        <!-- 主动残影，逻辑同上 -->
         <view class="card">
-            <template is="title" data="{{title:'主动残影'}}"/>
+            <template is="title" data="{{title:'主动残影',dataSrc:'shadowPositiv'}}"/>
             <view class="mini-card">
-                <view class="shadow-activ">
-                    <view class="shadow-unit">
-                        <text>123123</text>
-                        <view class="shadow-img">
-                            <template is="selector" data="{{size:'circle'}}"/>
+                <view class="shadow-unit flex-btw">
+                    <block wx:for="{{shadowPositiv}}" wx:for-item="shadowItem" wx:key="positiv" wx:for-index="shadowIdx">
+                        <view class="shadow-img" bindtap="changeCurItem" data-curitem="{{shadowItem}}" data-datasrc="shadowPositiv" data-dataidx="{{shadowIdx}}">
+                            <template is="selector" data="{{size:'normal',...shadowItem}}"/>
                         </view>
-                    </view>
+                    </block>
                 </view>
             </view>
+            <!-- 被动残影，逻辑不同，使用选项卡添加项目，点击图标进入详情页，再点击遮罩页面左下角可以删除当前项目；或者使用界面的清空按钮清空所有被动残影内容 -->
             <template is="title" data="{{title:'被动残影'}}"/>
             <view class="mini-card">
-                <view class="shadow-activ">
-                    <view class="shadow-unit">
-                        <text>123123</text>
-                        <view class="shadow-img">
-                            <template is="selector" data="{{size:'circle'}}"/>
+                <block wx:for="{{shadowNegativ}}" wx:for-item="shadowBundle" wx:key="shadowBundle">
+                    <block wx:if="{{shadowBundle.data[0]}}">
+                        <view class="shadow-activ flex-cent">
+                            <text>{{shadowBundle.title}}</text>
+                            <view class="shadow-unit flex-btw">
+                                <block wx:for="{{shadowBundle.data}}" wx:for-item="shadowItem" wx:key="shadow">
+                                    <view class="shadow-img"  bindtap="changeCurItem" data-curitem="{{shadowItem}}">
+                                        <template is="selector" data="{{size:'circle',...shadowItem}}"/>
+                                    </view>
+                                </block>
+                            </view>
                         </view>
-                    </view>
-                </view>
-                <mp-tabs tabs="{{tabs}}">
-                    <view class="tab-container" slot="tab-content-1">
-                        tab-content-1
-                    </view>
+                    </block>
+                </block>
+                <!-- 被动残影选择tabs -->
+                <mp-tabs tabs="{{tabs}}" tab-class="tab-bar-class" swiper-class="tab-class">
+                    <block wx:for="{{negativShadows}}" wx:key="negativ" wx:for-item="bundleShadow">
+                        <scroll-view scroll-y="true" style="height:100%;" slot="tab-content-{{index}}">
+                            <view class="tab-container" >
+                                <block wx:for="{{bundleShadow}}" wx:key="shadow">
+                                    <template is="miniItem" data="{{icon:item.icon,name:item.name}}"/>
+                                </block>
+                            </view>
+                        </scroll-view>
+                    </block>
                 </mp-tabs>
             </view>
-
         </view>
+        <!-- 效果总览，将所有的效果循环渲染在表中，默认为满级属性 -->
         <view class="card">
             <template is="title" data="{{title:'效果总览'}}"/>
             <view class="mini-card">
