@@ -3,5 +3,5 @@
     color: color
  -->
 <template name="color-text">
-    <text style="color:{{color}}; font-weight:bold" > {{str}} </text>
+    <text class="text-text" style="color:{{color}}; font-weight:bold" > {{str}} </text>
 </template>

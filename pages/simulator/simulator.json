@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "mp-tabs": "@miniprogram-component-plus/tabs",
-    "base-info-card":"/components/base-info-card/base-info-card"
+    "base-info-card":"/components/base-info-card/base-info-card",
+    "color-effect":"/components/color-effect/color-effect"
   }
 }
