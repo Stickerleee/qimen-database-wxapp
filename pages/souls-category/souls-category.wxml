@@ -1,6 +1,32 @@
 <!--pages/souls-category/souls-category.wxml-->
-<view class="container">
-    <blcok class="categorys" wx:for="{{categorys}}" wx:for-item="item" wx:key="item" wx:for-index="idx">
-        <list-categorys idx="{{idx}}" icon="{{item.icon}}" name="{{item.name}}" property="{{item.property}}" divinatory="{{item.divinatory}}" tags="{{item.tags}}" type="{{item.type}}" id0="{{item.id}}"></list-categorys>
-    </blcok>
-</view>
+
+<!-- 列表cell模板 -->
+<template name="list-cell">
+    <view class="cell border-bottom" bindtap="showDetail" data-type="{{type}}" data-id="{{id}}">
+        <view class="cell-image">
+            <image src="{{icon}}" mode="aspectFit" lazy-load="true" style="width: 150rpx;height: 150rpx;"></image>
+        </view>
+        <view class="info">
+            <view class="name">
+                <text class="text-title">{{name}}</text>
+                <text> | </text>
+                <text>{{property}}</text>
+                <text> | </text>
+                <text>{{divinatory}}</text>
+            </view>
+            <view class="tags">
+                <button class="mini-btn" type="default" size="mini" disabled="true" wx:for="{{tags}}" wx:for-item="tag"
+                    wx:key="tag">{{tag}}</button>
+            </view>
+        </view>
+    </view>
+</template>
+
+
+<!-- 页面内容 -->
+<blcok class="categorys" wx:for="{{categorys}}" wx:for-item="item" wx:key="item" wx:for-index="idx">
+    <!-- <list-categorys idx="{{idx}}" icon="{{item.icon}}" name="{{item.name}}" property="{{item.property}}"
+            divinatory="{{item.divinatory}}" tags="{{item.tags}}" type="{{item.type}}" id0="{{item.id}}">
+        </list-categorys> -->
+    <template is="list-cell" data="{{...item}}" />
+</blcok>

@@ -1,20 +1,21 @@
 <!--pages/shadow-detail/shadow-detail.wxml-->
 <!-- weapons 和 shadows共用的详情页 -->
 <view class="container">
-    <view class="effect-card">
-        <base-info-card icon="{{icon}}" name="{{name}}" property="{{property}}" divinatory="{{divinatory}}" tags="{{tags}}" color="{{color}}"/>
+    <view class="card">
+        <base-info-card icon="{{icon}}" name="{{name}}" property="{{property}}" divinatory="{{divinatory}}"
+            tags="{{tags}}" color="{{color}}" />
     </view>
-    <view class="effect-card">
+    <view class="card">
         <view class="effect">
-            <view class="second-title" id="spec-effect">装备效果</view>
-            <view class="info-text">
-                <view class="with-icon">
+            <view class="second-title text-sec-title" id="spec-effect">装备效果</view>
+            <view class="info-text flex-btw">
+                <view class="bagua-icon">
                     <view class="icon-container" id="bagua-icon">
                         <view class="effect-icon">
-                            <image src="{{baguaIcon}}" mode="heightFix" style="max-height:100%; max-width:100%;"/>
+                            <image src="{{baguaIcon}}" mode="heightFix" style="max-height:100%; max-width:100%;" />
                         </view>
                     </view>
-                    <view class="info-text" id="inner-text">
+                    <view class="effect-with-icon">
                         <block wx:for="{{effect}}" wx:key="effect">
                             <color-effect str="{{item}}" color="{{color}}" />
                         </block>
@@ -26,32 +27,36 @@
                 </view>
             </view>
         </view>
-        <view class="second-title">满强化效果</view>
-        <view class="info-text">
-            <block wx:for="{{effectUpdata}}" wx:key="updata">
-                <color-effect str="{{item}}" color="{{color}}" />
-            </block>
-        </view>
-        <block wx:if="{{type!=='weapon'}}">
-            <view class="second-title">满叠加/献祭效果</view>
-            <view class="info-text">
-                <block wx:for="{{stackUpdata}}" wx:key="stack">
+        <view class="effect">
+            <view class="second-title text-sec-title">满强化效果</view>
+            <view class="info-text" style="flex-direction:column;align-items:start;">
+                <block wx:for="{{effectUpdata}}" wx:key="updata">
                     <color-effect str="{{item}}" color="{{color}}" />
                 </block>
             </view>
+        </view>
+        <block wx:if="{{type!=='weapon'}}">
+            <view class="effect">
+                <view class="second-title text-sec-title">满叠加/献祭效果</view>
+                <view class="info-text">
+                    <block wx:for="{{stackUpdata}}" wx:key="stack">
+                        <color-effect str="{{item}}" color="{{color}}" />
+                    </block>
+                </view>
+            </view>
         </block>
         <block wx:if="{{lockEffect}}">
-            <view class="second-title">解封效果</view>
+            <view class="second-title text-sec-title">解封效果</view>
             <block wx:for="{{lockEffect}}" wx:for-index="lockIdx" wx:key="lock">
                 <view class="info-text">
-                    <view class="with-icon">
+                    <view class="bagua-icon">
                         <view class="icon-container">
                             <view class="lock-effect-icon">
-                                <color-effect str="{{greatNum[lockIdx]}}" color="{{color}}" />
+                                {{greatNum[lockIdx]}}
                             </view>
                         </view>
-                        <view class="info-text" id="inner-text">
-                            <color-effect str="{{item}}" color="{{color}}" />
+                        <view class="effect-with-icon">
+                            <text>{{item}}</text>
                         </view>
                     </view>
                 </view>

@@ -27,12 +27,11 @@ Component({
     methods: {
         // 跳转到物品详情页
         showDetail: function (event) {
-            if (this.properties.type==='soul'){
+            if (this.properties.type === 'soul') {
                 wx.navigateTo({
                     url: '../soul-detail/soul-detail?type=' + this.properties.type + '&id=' + this.properties.id0
                 })
             }
-
         },
     }
 })

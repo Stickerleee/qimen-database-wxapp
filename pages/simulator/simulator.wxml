@@ -27,7 +27,7 @@
     title: 标题
  -->
 <template name="title">
-    <view class="title flex-btw">
+    <view class="flex-btw">
         <view>
             <text class="text-title">{{title}} </text>
             <text class="text-desc"> {{desc}}</text>
@@ -53,25 +53,29 @@
 <view>
     <block wx:if="{{showDetail}}">
         <view class="detail-background flex-cent">
-            <view class="detail-tab">
+            <view class="card">
                 <view class="detail-container">
                     <block wx:if="{{curitem.name}}">
                         <view class="base-info">
                             <view class="base-info-image flex-cent">
-                                <image src="{{curitem.icon}}" mode="aspectFit" lazy-load="true" />
+                                <image src="{{curitem.icon}}" mode="aspectFit" lazy-load="true"
+                                    style="height: 120rpx;width: 120rpx;" />
                             </view>
                             <view class="full-flex flex-cent">
                                 <view>
-                                    <span class="text-head-title" style="color:{{curitem.color}}">{{curitem.name}}</span><span class="text-text"> |
+                                    <span class="text-head-title"
+                                        style="color:{{curitem.color}}">{{curitem.name}}</span><span class="text-text">
+                                        |
                                         {{curitem.property}} | {{curitem.divinatory}}</span>
                                 </view>
                             </view>
                         </view>
-                        <view class="effect">
-                            <text class="text-sec-title">效果</text>
+                        <view class="tab-effect">
+                            <text class="text-sec-title second-title">效果</text>
                             <block wx:for="{{curitem.effect}}" wx:for-item="itemEffect" wx:key="effect">
-                                <!-- <view><text class="text-text">{{itemEffect}}</text></view> -->
-                                <color-effect str="{{itemEffect}}" color="{{curitem.color}}" />
+                                <view class="tab-effect-info">
+                                    <color-effect str="{{itemEffect}}" color="{{curitem.color}}" />
+                                </view>
                             </block>
                         </view>
                     </block>
@@ -99,38 +103,21 @@
                                     </view>
                                 </block>
                             </block>
-
-
-                            <!-- <block wx:if="{{selectedItemSrc==='weapon'}}">
-                                <block wx:for="{{weaponCategory}}">
-                                    <template is="miniItem" data="{{icon:item.icon}}" />
-                                </block>
-                            </block>
-                            <block wx:if="{{selectedItemSrc==='shadowPositiv'}}">
-                                <block wx:for="{{shadowPositivCategory}}">
-                                    <template is="miniItem" data="{{icon:item.icon}}" />
-                                </block>
-                            </block> -->
                         </view>
                     </block>
                 </view>
-                <view class="flex-cent text-desc">点击即可添加</view>
+                <block wx:if="{{!curitem.name}}">
+                    <view class="flex-cent text-desc">点击即可添加</view>
+                </block>
                 <view class="tab-button">
                     <!-- <block wx:if="{{curitem.name}}"> -->
                     <!-- 点击删除会删除当前选择格子的物品，并返回 -->
-                    <view class="flex-cent text-caution" bindtap="deleteCurItem">
+                    <view class="flex-cent text-caution tab-click" bindtap="deleteCurItem">
                         <image src="/image/icon/del.png" mode="asceptFit" style="max-width:16px;max-height:16px;" />
                         删除
                     </view>
-                    <!-- </block>
-                    <block wx:if="{{!curitem.name}}">
-                        <view class="flex-cent text-caution">
-                            <image src="/image/icon/del.png" mode="asceptFit" style="max-width:16px;max-height:16px;" />
-                            全部移除
-                        </view>
-                    </block> -->
                     <!-- 点击确定直接返回 -->
-                    <view class="flex-cent" bindtap="hideDetailClick">确定</view>
+                    <view class="flex-cent tab-click" bindtap="hideDetailClick">确定</view>
                 </view>
             </view>
         </view>
@@ -139,9 +126,9 @@
 
 <!-- 页面内容 -->
 <scroll-view scroll-y="true" style="height: 100vh">
-    <view class="page-container">
+    <view class="container">
         <!-- 神魂选择卡，点击加号弹出目录遮罩页，点击遮罩页中的图标可以连续添加，点击遮罩页左下角清空所有选择；点击界面中的物品图标可以跳转到详情遮罩页，显示点击物品的详细信息，点击遮罩页左下角删除当前的物品 -->
-        <view class="card">
+        <view class="tab" style="margin: 0 0 16rpx 0; padding-top: 8rpx;">
             <template is="title" data="{{title:'神魂',dataSrc:'soul',desc:'点击图标可查看详情'}}" />
             <view class="mini-card">
                 <view class="soul-selector flex-btw">
@@ -166,7 +153,7 @@
             </view>
         </view>
         <!-- 灵器选择卡，逻辑同上 -->
-        <view class="card">
+        <view class="tab">
             <template is="title" data="{{title:'灵器',dataSrc:'weapon'}}" />
             <view class="mini-card">
                 <view class="weapon-selector flex-btw">
@@ -181,7 +168,7 @@
         </view>
         <!-- 残影选择卡 -->
         <!-- 主动残影，逻辑同上 -->
-        <view class="card">
+        <view class="tab">
             <template is="title" data="{{title:'主动残影',dataSrc:'shadowPositiv'}}" />
             <view class="mini-card">
                 <view class="shadow-unit flex-btw">
@@ -197,7 +184,7 @@
             <!-- 被动残影，逻辑不同，使用选项卡添加项目，点击图标进入详情页，再点击遮罩页面左下角可以删除当前项目；或者使用界面的清空按钮清空所有被动残影内容 -->
             <template is="title" data="{{title:'被动残影',dataSrc:'shadowNegativ',desc:'点击图标添加到已选'}}" />
             <!-- 被动残影选择tabs，点击图标会直接添加到已选队列 -->
-            <view class="tabs-container">
+            <view class="mini-card">
                 <mp-tabs tabs="{{tabs}}" tab-class="tab-bar-class" swiper-class="tab-class"
                     active-class="tab-active-class">
                     <block wx:for="{{negativCategory}}" wx:key="negativ" wx:for-item="bundleShadow">
@@ -237,7 +224,7 @@
             </view>
         </view>
         <!-- 效果总览，将所有的效果循环渲染在表中，默认为满级属性 -->
-        <view class="card">
+        <!-- <view class="tab">
             <template is="title" data="{{title:'效果总览'}}" />
             <view class="mini-card">
                 <view class="effect-show">
@@ -253,6 +240,6 @@
                     <text>效果1:123123了吉电股份辣椒粉辣椒粉欧较司法局熬时间佛贾师傅</text>
                 </view>
             </view>
-        </view>
+        </view> -->
     </view>
 </scroll-view>

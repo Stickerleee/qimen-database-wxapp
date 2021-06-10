@@ -2,8 +2,7 @@
 .base-info {
     max-width: 100%;
     display: flex;
-    max-height: 250rpx;
-    padding: 30rpx 15rpx;
+    height: 200rpx;
 }
 
 .image {
@@ -25,7 +24,8 @@
 }
 
 .item-name {
-    font-size: xx-large;
+    font-size: 40rpx;
+	font-weight: bold;
 }
 
 .tags {

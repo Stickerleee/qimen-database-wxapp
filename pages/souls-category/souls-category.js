@@ -6,16 +6,32 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {
-    },
+    data: {},
 
 
     // 云端获取神魂数据
-    getSoulCate(){
+    getSoulCate() {
         const categorys = db.getCategoryByType('soul')
         this.setData({
             categorys
         })
+    },
+
+    // 神魂项目点击事件
+    showDetail: function (event) {
+        console.log(event)
+        const {
+            type,
+            id
+        } = event.currentTarget.dataset
+        wx.navigateTo({
+            url: '../soul-detail/soul-detail?type=' + type + '&id=' + id
+        })
+        // if (this.properties.type === 'soul') {
+        //     wx.navigateTo({
+        //         url: '../soul-detail/soul-detail?type=' + this.properties.type + '&id=' + this.properties.id0
+        //     })
+        // }
     },
     /**
      * 生命周期函数--监听页面加载

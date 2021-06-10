@@ -6,7 +6,7 @@
     </view>
     <view class="base-info-text">
         <view class="name">
-            <text class="item-name">{{name}}</text>
+            <text class="item-name" style="color:{{color}}">{{name}}</text>
             <text> | </text>
             <text>{{property}}</text>
             <text> | </text>

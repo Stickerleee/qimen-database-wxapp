@@ -1,29 +1,29 @@
 /* pages/shadow-detail/shadow-detail.wxss */
 
 .effect-icon {
-    height: 120rpx;
-    width: 120rpx;
+	height: 120rpx;
+	width: 120rpx;
 }
+
 .info-text {
-    padding: 20rpx 0;
-    margin: 0rpx 30rpx;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1rpx solid rgb(218, 218, 218); 
-    flex-direction: column;
-  }
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-  .with-icon {
-    width: 100%;
-    display: grid;
-    grid-template-columns: max-content auto;
-  }
+.bagua-icon {
+	width: 100%;
+	display: grid;
+	grid-template-columns: max-content auto;
+}
 
-  #inner-text {
-    border-bottom: 0rpx;
-    align-items: flex-start;
-  }
+.effect-with-icon {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 0 24rpx;
+}
+
 
 
 
@@ -35,19 +35,19 @@
 } */
 
 .icon-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
+	height: 100%;
+	display: flex;
+	align-items: center;
 }
 
 
 .lock-effect-icon {
-    font-weight: bolder;
-    font-size: xx-large;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100rpx;
-    width: 100rpx;
-    border: 1rpx solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 120rpx;
+	width: 120rpx;
+	border: 1rpx solid black;
+	font-size: 50rpx;
+	font-weight: bold;
 }

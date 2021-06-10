@@ -2,7 +2,7 @@
 <!-- 列表状目录 -->
 <view class="item" bindtap="showDetail">
     <view class="item-image" >
-        <image src="{{icon}}" mode="aspectFill" lazy-load="true"></image>
+        <image src="{{icon}}" mode="aspectFill" lazy-load="true" style="width: 150rpx;height: 150rpx;"></image>
     </view>
     <view class="info">
         <view class="name">

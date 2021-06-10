@@ -1,35 +1,48 @@
 <!--pages/soul-detail/soul-detail.wxml-->
 <!-- 神魂详情页 -->
 <view class="container">
-    <view class="effect-card">
-        <base-info-card icon="{{icon}}" name="{{name}}" property="{{property}}" divinatory="{{divinatory}}" tags="{{tags}}" color="{{color}}"></base-info-card>
+    <view class="card">
+        <base-info-card icon="{{icon}}" name="{{name}}" property="{{property}}" divinatory="{{divinatory}}"
+            tags="{{tags}}" color="{{color}}"></base-info-card>
     </view>
-    <view class="effect-card">
+    <view class="card">
         <view class="effect">
-            <view class="second-title">神魂效果</view>
+            <view class="second-title text-sec-title">神魂效果</view>
             <view class="info-text">
-                <text>两件套：</text><color-effect str="{{effect}}" color="{{color}}" />
-                <text>三件套：</text><color-effect str="{{effect1}}" color="{{color}}" />
+                <text>两件套：</text>
+                <color-effect str="{{effect}}" color="{{color}}" />
+                <text>三件套：</text>
+                <color-effect str="{{effect1}}" color="{{color}}" />
             </view>
-            <view class="second-title">升阶效果</view>
+        </view>
+        <view class="effect">
+            <view class="second-title text-sec-title">升阶效果</view>
             <view class="info-text" id="step-effect">
-                    <text> 每阶： </text><color-effect str="{{stepgrow}}" color="{{color}}" />
-                    <text> 20阶： </text><color-effect str="{{step20}}" color="{{color}}" />
-                    <text> 60阶： </text><color-effect str="{{step60}}" color="{{color}}" />
+                <text> 每阶： </text>
+                <color-effect str="{{stepgrow}}" color="{{color}}" />
+                <text> 20阶： </text>
+                <color-effect str="{{step20}}" color="{{color}}" />
+                <text> 60阶： </text>
+                <color-effect str="{{step60}}" color="{{color}}" />
             </view>
-            <view class="second-title">满阶效果</view>
+        </view>
+        <view class="effect">
+            <view class="second-title text-sec-title">满阶效果</view>
             <view class="info-text">
-                <text>两件套：</text><color-effect str="{{stepfull}}" color="{{color}}" />
-                <text>三件套：</text><color-effect str="{{stepfull1}}" color="{{color}}" />
+                <text>两件套：</text>
+                <color-effect str="{{stepfull}}" color="{{color}}" />
+                <text>三件套：</text>
+                <color-effect str="{{stepfull1}}" color="{{color}}" />
             </view>
         </view>
         <view class="soul-show">
-            <view class="second-title">神魂展示</view>
+            <view class="second-title text-sec-title">神魂展示</view>
             <block wx:for="{{soulShowbundle}}" wx:key="pic">
-                <view class="soul-card info-text" >
-                    <image src="{{item.pic}}" mode="aspectFit" lazy-load="true" style="max-width: 100%; max-height: 100%;"></image>
+                <view class="soul-card effect">
+                    <image src="{{item.pic}}" mode="aspectFit" lazy-load="true"
+                        style="max-width: 100%; max-height: 100%;"></image>
                     <view class="soul-detail">
-                        <text style="font-weight: bolder">{{item.name}}</text>
+                        <text class="text-title">{{item.name}}</text>
                         <text>\n</text>
                         <text>满级属性：{{item.text}}</text>
                     </view>

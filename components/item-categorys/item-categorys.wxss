@@ -1,16 +1,19 @@
 /* components/item-categorys/item-categorys.wxss */
 .item {
     display: flex;
-    height: 100rpx;
-    margin: 25rpx 0;
+    height: 150rpx;
     width: 250rpx;
 }
 
 .item-info {
-    display: flex;
+    display: flex; 
     align-items: center;
     justify-content: center;
     height: 100%;
     width: 100%;
 
+}
+
+text {
+    font-size: 34rpx;
 }
