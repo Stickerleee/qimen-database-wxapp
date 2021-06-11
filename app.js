@@ -21,12 +21,12 @@ App({
 	globalData: {
 		userInfo: null
 	},
-	initData() {
+	async initData() {
 		const {
 			soul,
 			weapon,
 			shadow
-		} = db.getAlldata()
+		} = await db.getAlldata()
 		this.globalData = {
 			soul,
 			weapon,

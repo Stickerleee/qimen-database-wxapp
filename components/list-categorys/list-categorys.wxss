@@ -1,16 +1,12 @@
 /* components/list-categorys/list-categorys.wxss */
 .item{
     display: flex;
-    height: 150rpx;
-    padding: 10rpx;
+    height: 120rpx;
+    padding: 5rpx 0;
     border-bottom: 1rpx solid rgb(218, 218, 218); 
     border-width: 1rpx;
 }
 
-.item image{
-    width: 150rpx;
-    height: 150rpx;
-}
 
 .name {
     border-bottom: 1rpx solid rgb(218, 218, 218); 

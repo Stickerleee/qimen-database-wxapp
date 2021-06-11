@@ -12,8 +12,6 @@ Component({
      * 组件的初始数据
      */
     data: {
-        black: "black",
-        test:"造成暴击时，有100%的几率增加60%的暴击伤害，持续5秒，20秒冷却时间。雷攻雷防+20wx.getFileSystemManager()"
     },
 
     /**
@@ -21,9 +19,13 @@ Component({
      */
     methods: {
         getStrArrayByRex(){
+            // 选择带加减号或百分号的数值（含小数点）
             const reTmp = /[\+-]\d+\.?\d*%?|\d+%/g
+            // 拆分数值和文字
             const numArr = this.properties.str.match(reTmp)
             const strArr = this.properties.str.split(reTmp)
+            
+
             this.setData({
                 numArr,
                 strArr

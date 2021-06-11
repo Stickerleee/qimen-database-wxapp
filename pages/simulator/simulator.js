@@ -52,6 +52,7 @@ Page({
 				data: []
 			}
 		],
+		shadowCount: 0,
 		effect: [],
 		showDetail: false,
 		curitem: {},
@@ -146,6 +147,7 @@ Page({
 		// 如果是被动残影集合，则提取对应卦象中的数据
 		if (selectedItemSrc === 'shadowNegativ') {
 			targetBundel[this.data.selectedShadowBundle].data.splice(this.data.selectedItemIdx, 1)
+			this.subShadowCount()
 		} else {
 			// 正常删除
 			targetBundel[this.data.selectedItemIdx] = {}
@@ -164,7 +166,7 @@ Page({
 		const shadowCategory = await db.getCategoryByType('shadow')
 		const shadowPositivCategory = shadowCategory.filter((item) => item.activ === 'positiv')
 		// const negativCategory = this.sortedByDivi(shadowCategory.filter((item)=>item.activ==='negativ'))
-		const negativCategory = util.sortedByDivi0(shadowCategory)
+		const negativCategory = util.sortedByDivi0(shadowCategory.filter((item) => item.activ === 'negativ'))
 		this.setData({
 			soulCategory,
 			weaponCategory,
@@ -192,6 +194,7 @@ Page({
 				// if (!foo.data.find((item) => item.id === targetId)) {
 				if (!this.checkItemExistById(targetId, foo.data)) {
 					foo.data.push(curshadow)
+					this.addShadowCount()
 					break
 				}
 			}
@@ -232,18 +235,57 @@ Page({
 		}
 	},
 
+	// 被动残影计数器
+	addShadowCount() {
+		this.setData({
+			shadowCount: this.data.shadowCount + 1
+		})
+	},
+
+	subShadowCount() {
+		this.setData({
+			shadowCount: this.data.shadowCount - 1
+		})
+	},
+
+	// 缓存
+	async getLocalStorage() {
+		const storage = await wx.getStorageSync('simulator')
+
+		// )
+		if (storage) {
+			const soul = await wx.getStorageSync('soul')
+			const weapon = await wx.getStorageSync('weapon')
+			const shadowPositiv = await wx.getStorageSync('shadowPositiv')
+			const shadowNegativ = await wx.getStorageSync('shadowNegativ')
+			const shadowCount = await wx.getStorageSync('shadowCount')
+			console.log('getLocalStorage success')
+			this.setData({
+				soul,
+				weapon,
+				shadowPositiv,
+				shadowNegativ,
+				shadowCount
+			})
+		} else {
+			console.log('no local storage')
+		}
+
+	},
+
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.getAllCategorys()
+		this.getLocalStorage()
 	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-		this.getAllCategorys()
+
 	},
 
 	/**
@@ -257,7 +299,15 @@ Page({
 	 * 生命周期函数--监听页面隐藏
 	 */
 	onHide: function () {
-
+		try {
+			wx.setStorageSync('soul', this.data.soul)
+			wx.setStorageSync('weapon', this.data.weapon)
+			wx.setStorageSync('shadowPositiv', this.data.shadowPositiv)
+			wx.setStorageSync('shadowNegativ', this.data.shadowNegativ)
+			wx.setStorageSync('shadowCount', this.data.shadowCount)
+			wx.setStorageSync('simulator', 1)
+			console.log('save storage success')
+		} catch (e) {}
 	},
 
 	/**

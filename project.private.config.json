@@ -39,7 +39,7 @@
                 {
                     "name": "残影详情0",
                     "pathName": "pages/shadow-detail/shadow-detail",
-                    "query": "type=shadow&id=5111",
+                    "query": "type=shadow&id=62003",
                     "scene": null
                 },
                 {
@@ -52,6 +52,12 @@
                     "name": "模拟器",
                     "pathName": "pages/simulator/simulator",
                     "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "被动残影",
+                    "pathName": "pages/shadow-detail/shadow-detail",
+                    "query": "type=shadow&id=61002",
                     "scene": null
                 }
             ]

@@ -1,8 +1,10 @@
 /* components/item-categorys/item-categorys.wxss */
 .item {
     display: flex;
-    height: 150rpx;
-    width: 250rpx;
+    height: 160rpx;
+    width: 260rpx;
+    align-items: center;
+    justify-content: center;
 }
 
 .item-info {
@@ -11,7 +13,6 @@
     justify-content: center;
     height: 100%;
     width: 100%;
-
 }
 
 text {

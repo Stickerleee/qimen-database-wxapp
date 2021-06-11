@@ -9,15 +9,14 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-
 .detail-container {
-    padding: 20rpx 50rpx;
+    padding: 24rpx;
 }
 
 .detail-category {
     display: grid;
     grid-template-columns: repeat(7, auto);
-    grid-gap: 20rpx;
+    grid-gap: 24rpx;
 }
 
 .base-info {
@@ -118,8 +117,8 @@
 }
 
 .tab-class {
-    height: 320rpx;
-    padding: 20rpx 0;
+    height: 300rpx;
+    padding: 20rpx 0 0 0;
 }
 
 .tab-container {
@@ -128,7 +127,6 @@
     grid-gap: 10rpx;
 }
 
-.mini-img {
-    height: 80rpx;
-    width: 80rpx;
+.count {
+    background-color: #F2F2F2;
 }

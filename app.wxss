@@ -36,6 +36,7 @@
 	padding: 0 24rpx;
 	border-radius: 20rpx;
 	box-shadow: 0rpx 2rpx 5rpx rgba(0, 0, 0, 0.3);
+	max-width: 95%;
 }
 
 /* tab样式，与屏幕左右边界连接 */
@@ -92,7 +93,7 @@
 }
 
 .text-caution {
-	color: #AC1F0D;
+	color: #fa5151;
 }
 
 .text-text {

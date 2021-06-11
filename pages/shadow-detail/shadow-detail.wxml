@@ -29,38 +29,44 @@
         </view>
         <view class="effect">
             <view class="second-title text-sec-title">满强化效果</view>
-            <view class="info-text" style="flex-direction:column;align-items:start;">
+            <view class="info-text effect-plus">
                 <block wx:for="{{effectUpdata}}" wx:key="updata">
                     <color-effect str="{{item}}" color="{{color}}" />
                 </block>
             </view>
         </view>
-        <block wx:if="{{type!=='weapon'}}">
-            <view class="effect">
-                <view class="second-title text-sec-title">满叠加/献祭效果</view>
-                <view class="info-text">
-                    <block wx:for="{{stackUpdata}}" wx:key="stack">
-                        <color-effect str="{{item}}" color="{{color}}" />
-                    </block>
-                </view>
-            </view>
-        </block>
-        <block wx:if="{{lockEffect}}">
-            <view class="second-title text-sec-title">解封效果</view>
-            <block wx:for="{{lockEffect}}" wx:for-index="lockIdx" wx:key="lock">
-                <view class="info-text">
-                    <view class="bagua-icon">
-                        <view class="icon-container">
-                            <view class="lock-effect-icon">
-                                {{greatNum[lockIdx]}}
-                            </view>
-                        </view>
-                        <view class="effect-with-icon">
-                            <text>{{item}}</text>
-                        </view>
+        <!-- <block wx:if="{{type!=='weapon'}}">
+            <block wx:if="{{stackUpdata}}">
+                <view class="effect">
+                    <view class="second-title text-sec-title">满叠加/献祭效果</view>
+                    <view class="info-text effect-plus">
+                        <block wx:for="{{stackUpdata}}" wx:key="stack">
+                            <color-effect str="{{item}}" color="{{color}}" />
+
+                        </block>
+                        <slider max="{{maxStack}}" show-value="true" bindchange="stackSlider" style="width:100%" value="{{maxStack}}"/>
                     </view>
                 </view>
             </block>
+        </block> -->
+        <block wx:if="{{lockEffect}}">
+            <view class="effect">
+                <view class="second-title text-sec-title">解封效果</view>
+                <block wx:for="{{lockEffect}}" wx:for-index="lockIdx" wx:key="lock">
+                    <view class="info-text">
+                        <view class="bagua-icon">
+                            <view class="icon-container">
+                                <view class="lock-effect-icon">
+                                    {{greatNum[lockIdx]}}
+                                </view>
+                            </view>
+                            <view class="effect-with-icon">
+                                <text>{{item}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
         </block>
     </view>
 </view>

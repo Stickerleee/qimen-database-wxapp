@@ -1,5 +1,17 @@
 /* pages/shadow-detail/shadow-detail.wxss */
 
+.card {
+	padding: 16rpx;
+}
+
+.effect:last-child {
+	margin-bottom: 0px;
+}
+
+.effect:last-child .info-text{
+	border-bottom: 0px;
+}
+
 .effect-icon {
 	height: 120rpx;
 	width: 120rpx;
@@ -9,6 +21,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin: 0 16rpx;
 }
 
 .bagua-icon {
@@ -24,7 +37,10 @@
 	padding: 0 24rpx;
 }
 
-
+.effect-plus {
+	flex-direction:column;
+	align-items:start;
+}
 
 
 /* .effect-text {

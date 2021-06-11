@@ -1,5 +1,9 @@
 /* pages/soul-detail/soul-detail.wxss */
 
+.card {
+    padding: 16rpx;
+}
+
 .info-text {
     display: grid;
     grid-template-columns: 25% auto;

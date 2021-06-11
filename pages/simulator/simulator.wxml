@@ -81,6 +81,7 @@
                     </block>
                     <!-- 物品目录，用于添加新物品 -->
                     <block wx:if="{{!curitem.name}}">
+                    <scroll-view scroll-y="true" style="max-height:550rpx ">
                         <view class="full-flex detail-category">
                             <block wx:if="{{selectedItemSrc==='soul'}}">
                                 <block wx:for="{{soulCategory}}" wx:key="soulMiniItem">
@@ -104,6 +105,7 @@
                                 </block>
                             </block>
                         </view>
+                    </scroll-view>
                     </block>
                 </view>
                 <block wx:if="{{!curitem.name}}">
@@ -201,6 +203,8 @@
                     </block>
                 </mp-tabs>
             </view>
+            <view class="count flex-cent"><text>已选择残影数：{{shadowCount}}</text></view>
+            <!-- 已选残影展示 -->
             <view class="mini-card">
                 <block wx:for="{{shadowNegativ}}" wx:for-item="shadowBundle" wx:key="shadowBundle"
                     wx:for-index="shadowBundleIdx">
