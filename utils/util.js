@@ -96,9 +96,19 @@ function sortedByDivi0(foo){
   return diviName.map((title)=>foo.filter((item)=>item.divinatory===title))
 }
 
+// 为目录数据添加颜色
+function addColorByDivi(aobj) {
+  aobj.map((item)=>{
+    item.color = getBaguaColor(item.divinatory)
+    return item
+  })
+  return aobj
+}
+
 module.exports = {
     getBaguaIcon,
     diviName,
     getBaguaColor,
-    sortedByDivi0
+    sortedByDivi0,
+    addColorByDivi
 }

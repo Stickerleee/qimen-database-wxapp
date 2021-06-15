@@ -20,7 +20,8 @@ Component({
     methods: {
         getStrArrayByRex(){
             // 选择带加减号或百分号的数值（含小数点）
-            const reTmp = /[\+-]\d+\.?\d*%?|\d+%/g
+            // const reTmp = /[\+-]\d+\.?\d*%?|\d+\.?\d*%/g
+            const reTmp = /[\+-]\d+\.?\d*%?|\d+\.?\d*%/g
             // 拆分数值和文字
             const numArr = this.properties.str.match(reTmp)
             const strArr = this.properties.str.split(reTmp)

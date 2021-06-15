@@ -22,6 +22,11 @@ Component({
             "title": "防御",
             "title1": "坤"
           },
+          
+          {
+            "title": "治愈",
+            "title1": "兑"
+          },
           {
             "title": "火系",
             "title1": "离"
@@ -41,10 +46,6 @@ Component({
           {
             "title": "土系",
             "title1": "艮"
-          },
-          {
-            "title": "治愈",
-            "title1": "兑"
           }],
         tabDataSrc:[], //当前渲染数据
     },

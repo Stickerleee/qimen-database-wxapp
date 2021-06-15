@@ -38,27 +38,27 @@ Page({
     },
 
     // 根据叠加数计算数值
-    changeEffectByStack(str, stack, step) {
-        console.log(str, stack, step)
-        const reTmp = /(?<=[+-])\d+\.?\d*(?=%)?|\d+(?=%)/g
-        const numArr = str.match(reTmp).map((item, index) => {
-            const numItem = +item
-            return step[index] * numItem * stack + numItem
-        })
-        const strArr = str.split(reTmp)
-        console.log('inner', numArr)
-        let result = ''
-        let i = 0
-        while (true) {
-            result += strArr[i]
-            if (i === numArr.length) {
-                break
-            }
-            result += numArr[i]
-            i++
-        }
-        return result
-    },
+    // changeEffectByStack(str, stack, step) {
+    //     console.log(str, stack, step)
+    //     const reTmp = /(?<=[+-])\d+\.?\d*(?=%)?|\d+(?=%)/g
+    //     const numArr = str.match(reTmp).map((item, index) => {
+    //         const numItem = +item
+    //         return step[index] * numItem * stack + numItem
+    //     })
+    //     const strArr = str.split(reTmp)
+    //     console.log('inner', numArr)
+    //     let result = ''
+    //     let i = 0
+    //     while (true) {
+    //         result += strArr[i]
+    //         if (i === numArr.length) {
+    //             break
+    //         }
+    //         result += numArr[i]
+    //         i++
+    //     }
+    //     return result
+    // },
     // 滑块回调函数
     stackSlider(e) {
         const value = e.detail.value
@@ -69,12 +69,12 @@ Page({
     },
 
     // 计算叠加效果，返回数组
-    getStackEffect(effect, stack, stackStep) {
-        const stackUpdata = effect.map((str, index) => {
-            return this.changeEffectByStack(str, stack, stackStep[index])
-        })
-        return stackUpdata
-    },
+    // getStackEffect(effect, stack, stackStep) {
+    //     const stackUpdata = effect.map((str, index) => {
+    //         return this.changeEffectByStack(str, stack, stackStep[index])
+    //     })
+    //     return stackUpdata
+    // },
     // 更新叠加效果为指定value
     // changeStackEffect(value){
     //     const result = this.getStackEffect(this.effectUpdata, value, this.stackStep)

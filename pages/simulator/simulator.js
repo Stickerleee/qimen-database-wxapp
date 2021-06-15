@@ -130,6 +130,9 @@ Page({
 				item.data = []
 				return item
 			})
+			this.setData({
+				shadowCount:0
+			})
 		} else {
 			result = target.map(() => {
 				return {}
@@ -161,16 +164,17 @@ Page({
 
 	// 云端/本地获取所有的目录
 	async getAllCategorys() {
-		const soulCategory = await db.getCategoryByType('soul')
-		const weaponCategory = await db.getCategoryByType('weapon')
-		const shadowCategory = await db.getCategoryByType('shadow')
+		// const soulCategory = await db.getCategoryByType('soul')
+		// const weaponCategory = await db.getCategoryByType('weapon')
+		// const shadowCategory = await db.getCategoryByType('shadow')
+		const [soulCategory, weaponCategory, shadowCategory] = await Promise.all([db.getCategoryByType('soul'), db.getCategoryByType('weapon'), db.getCategoryByType('shadow')])
 		const shadowPositivCategory = shadowCategory.filter((item) => item.activ === 'positiv')
 		// const negativCategory = this.sortedByDivi(shadowCategory.filter((item)=>item.activ==='negativ'))
 		const negativCategory = util.sortedByDivi0(shadowCategory.filter((item) => item.activ === 'negativ'))
 		this.setData({
-			soulCategory,
-			weaponCategory,
-			shadowPositivCategory,
+			soulCategory:util.addColorByDivi(soulCategory),
+			weaponCategory:util.addColorByDivi(weaponCategory),
+			shadowPositivCategory:util.addColorByDivi(shadowPositivCategory),
 			negativCategory
 		})
 	},
@@ -248,11 +252,9 @@ Page({
 		})
 	},
 
-	// 缓存
+	// 获取缓存
 	async getLocalStorage() {
 		const storage = await wx.getStorageSync('simulator')
-
-		// )
 		if (storage) {
 			const soul = await wx.getStorageSync('soul')
 			const weapon = await wx.getStorageSync('weapon')
@@ -270,6 +272,18 @@ Page({
 		} else {
 			console.log('no local storage')
 		}
+	},
+
+	// 	保存为本地缓存
+	async saveLocalStorage() {
+		const foo = [wx.setStorageSync('soul', this.data.soul),
+			wx.setStorageSync('weapon', this.data.weapon),
+			wx.setStorageSync('shadowPositiv', this.data.shadowPositiv),
+			wx.setStorageSync('shadowNegativ', this.data.shadowNegativ),
+			wx.setStorageSync('shadowCount', this.data.shadowCount),
+			wx.setStorageSync('simulator', 1)
+		]
+		Promise.all(foo)
 
 	},
 
@@ -299,22 +313,16 @@ Page({
 	 * 生命周期函数--监听页面隐藏
 	 */
 	onHide: function () {
-		try {
-			wx.setStorageSync('soul', this.data.soul)
-			wx.setStorageSync('weapon', this.data.weapon)
-			wx.setStorageSync('shadowPositiv', this.data.shadowPositiv)
-			wx.setStorageSync('shadowNegativ', this.data.shadowNegativ)
-			wx.setStorageSync('shadowCount', this.data.shadowCount)
-			wx.setStorageSync('simulator', 1)
-			console.log('save storage success')
-		} catch (e) {}
+		this.saveLocalStorage()
+		console.log('saveLocalStorage after hidding')
 	},
 
 	/**
 	 * 生命周期函数--监听页面卸载
 	 */
 	onUnload: function () {
-
+		this.saveLocalStorage()
+		console.log('saveLocalStorage after uninstall')
 	},
 
 	/**

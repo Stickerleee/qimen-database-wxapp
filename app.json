@@ -29,32 +29,32 @@
             {
                 "pagePath": "pages/index/index",
                 "text": "首页",
-                "iconPath": "image/tabbar/home.png",
-                "selectedIconPath": "image/tabbar/home_selected.png"
+                "iconPath": "/image/tabbar/home.png",
+                "selectedIconPath": "/image/tabbar/home_selected.png"
             },
             {
                 "pagePath": "pages/souls-category/souls-category",
                 "text": "神魂",
-                "iconPath": "image/tabbar/soul.png",
-                "selectedIconPath": "image/tabbar/soul_selected.png"
+                "iconPath": "/image/tabbar/soul.png",
+                "selectedIconPath": "/image/tabbar/soul_selected.png"
             },
             {
                 "pagePath": "pages/weapon-category/weapon-category",
                 "text": "灵器",
-                "iconPath": "image/tabbar/weapon.png",
-                "selectedIconPath": "image/tabbar/weapon_selected.png"
+                "iconPath": "/image/tabbar/weapon.png",
+                "selectedIconPath": "/image/tabbar/weapon_selected.png"
             },
             {
                 "pagePath": "pages/shadows-category/shadows-category",
                 "text": "残影",
-                "iconPath": "image/tabbar/shadow.png",
-                "selectedIconPath": "image/tabbar/shadow_selected.png"
+                "iconPath": "/image/tabbar/shadow.png",
+                "selectedIconPath": "/image/tabbar/shadow_selected.png"
             },
             {
                 "pagePath": "pages/simulator/simulator",
                 "text": "模拟器",
-                "iconPath": "image/tabbar/simulator.png",
-                "selectedIconPath": "image/tabbar/simulator_selected.png"
+                "iconPath": "/image/tabbar/simulator.png",
+                "selectedIconPath": "/image/tabbar/simulator_selected.png"
             }
         ]
     }

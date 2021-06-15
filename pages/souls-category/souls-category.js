@@ -19,7 +19,6 @@ Page({
 
     // 神魂项目点击事件
     showDetail: function (event) {
-        console.log(event)
         const {
             type,
             id
@@ -27,11 +26,9 @@ Page({
         wx.navigateTo({
             url: '../soul-detail/soul-detail?type=' + type + '&id=' + id
         })
-        // if (this.properties.type === 'soul') {
-        //     wx.navigateTo({
-        //         url: '../soul-detail/soul-detail?type=' + this.properties.type + '&id=' + this.properties.id0
-        //     })
-        // }
+    },
+    refreshData(){
+        wx.startPullDownRefresh()
     },
     /**
      * 生命周期函数--监听页面加载
@@ -72,7 +69,8 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh: function () {
-
+        this.getSoulCate()
+        wx.stopPullDownRefresh()
     },
 
     /**

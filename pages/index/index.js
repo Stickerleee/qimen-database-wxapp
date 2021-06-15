@@ -2,19 +2,17 @@
 
 Page({
 	data: {
-		test: []
+		// test: []
 	},
 	onLoad: function () {
-		let data = require('../../data/weapons').weapons.data
+		// let data = require('../../data/shadows').shadows.data
 		
-		data.map((item,index) => {
-			item.idx = index
-			item.icon = "/image/weapon/"+ item.id +".png"
-			item.effectUpdata = item.effect
-			delete item.baguaIcon
-		})
-		this.setData({
-			test:data
-		})
+		// data.map((item,index) => {
+		// 	item.idx = index
+		// 	item.icon = "/image/shadow/"+ item.id +".png"
+		// })
+		// this.setData({
+		// 	test:data
+		// })
 	}
 })

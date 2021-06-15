@@ -11,6 +11,7 @@
 
 .detail-container {
     padding: 24rpx;
+    min-width: 80vw;
 }
 
 .detail-category {
@@ -129,4 +130,12 @@
 
 .count {
     background-color: #F2F2F2;
+}
+
+.mini-img {
+    height:64rpx;
+    width:64rpx;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 32rpx;
+    border: 4rpx solid;
 }

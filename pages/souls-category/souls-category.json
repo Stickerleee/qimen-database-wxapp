@@ -3,5 +3,6 @@
     "mp-searchbar": "weui-miniprogram/searchbar/searchbar",
     "list-categorys":"/components/list-categorys/list-categorys"
   },
-  "navigationBarTitleText": "神魂总览"
+  "navigationBarTitleText": "神魂总览",
+  "enablePullDownRefresh": true
 }

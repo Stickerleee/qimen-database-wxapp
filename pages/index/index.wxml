@@ -1,7 +1,20 @@
 <!--index.wxml-->
 <!-- 主页 -->
 <view class="container">
-	<view class="main-title">数据库主页</view>
-	<view class="intro">数据库介绍</view>
-	<color-effect str="造成暴击时，有100%的几率增加60%的暴击伤害，持续5秒，20秒冷却时间。雷攻雷防+20." color="#1FCBB2"/>
+<view class="tab">
+	
+	<view class="info-text">
+		<view class="second-title text-sec-title">小程序说明</view>
+		<text>● 制作本小程序出于兴趣爱好，禁止用于任何商业用途 \n</text>
+		<text>● BUG反馈＆数据勘误：951155060@qq.com \n</text>
+		<text>● 数据更新时间 2021年6月15日16:24:27 \n</text>
+		<text>● 图片资源源自网络，如侵权请邮箱联系删除 \n</text>
+	</view>
+	
+	<view class="info-text ">
+		<view class="second-title text-sec-title">更新说明</view>
+		<text>● v0.0.1 \n</text>
+		<text> 初始版本发布 \n</text>
+	</view>
+</view>
 </view>

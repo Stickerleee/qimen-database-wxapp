@@ -13,3 +13,5 @@
         </block>
     </mp-tabs>
 </vtabs-categorys>
+<import src="/template/refresh-btn.wxml"/>
+<template is="refresh-btn" />

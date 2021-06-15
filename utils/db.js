@@ -3,42 +3,51 @@
 
 // 初始化时一次性拉取所有文字数据，app.js中需要添加async 和 await
 
-// async function getAlldata(){
-// result为一个数组
-// wx.cloud.init()
-// const db = wx.cloud.database()
-// const _ = db.command
-// let soul, weapon, shadow
-// const result = (await db.collection('alldata').get()).data
-// soul = result.filter((item)=>item.type==='soul')[0].category
-// weapon = result.filter((item)=>item.type==='weapon')[0].category
-// shadow = result.filter((item)=>item.type==='shadow')[0].category
-// return {soul, weapon, shadow}
-// }
-
-// 使用本地的data开发
-
-function getAlldata() {
-    // result为一个数组
+async function getAlldata() {
     try {
-        const result = require('../data/data').data
-        const soul = result.filter((item) => item.type === 'soul')[0].category
-        const weapon = result.filter((item) => item.type === 'weapon')[0].category
-        const shadow = result.filter((item) => item.type === 'shadow')[0].category
+        wx.cloud.init()
+        const db = wx.cloud.database()
+        const _ = db.command
+        let soul, weapon, shadow
+        const result = (await db.collection('alldata').get()).data
+        soul = result.filter((item) => item.type === 'soul')[0].category
+        weapon = result.filter((item) => item.type === 'weapon')[0].category
+        shadow = result.filter((item) => item.type === 'shadow')[0].category
         return {
             soul,
             weapon,
             shadow
         }
-    } catch (error) {
+    } catch (e) {
         wx.showToast({
-            title: '获取数据失败',
+            title: '获取数据失败，请重新打开小程序',
             icon: 'error',
             duration: 1000
         })
     }
-
 }
+
+// 使用本地的data开发
+
+// function getAlldata() {
+//     try {
+//         const result = require('../data/data').data
+//         const soul = result.filter((item) => item.type === 'soul')[0].category
+//         const weapon = result.filter((item) => item.type === 'weapon')[0].category
+//         const shadow = result.filter((item) => item.type === 'shadow')[0].category
+//         return {
+//             soul,
+//             weapon,
+//             shadow
+//         }
+//     } catch (error) {
+//         wx.showToast({
+//             title: '获取数据失败',
+//             icon: 'error',
+//             duration: 1000
+//         })
+//     }
+// }
 
 
 

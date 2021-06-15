@@ -59,6 +59,12 @@
                     "pathName": "pages/shadow-detail/shadow-detail",
                     "query": "type=shadow&id=61002",
                     "scene": null
+                },
+                {
+                    "name": "pages/shadow-detail/shadow-detail",
+                    "pathName": "pages/shadow-detail/shadow-detail",
+                    "query": "type=shadow&id=62019",
+                    "scene": null
                 }
             ]
         }

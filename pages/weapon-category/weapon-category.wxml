@@ -8,3 +8,5 @@
         </view>
     </scroll-view>  
 </vtabs-categorys>
+<import src="/template/refresh-btn.wxml"/>
+<template is="refresh-btn" />

@@ -3,5 +3,6 @@
     "vtabs-categorys":"/components/vtabs-categorys/vtabs-categorys",
     "item-categorys":"/components/item-categorys/item-categorys"
   },
-  "navigationBarTitleText":"灵器总览"
+  "navigationBarTitleText":"灵器总览",
+  "enablePullDownRefresh": true
 }

@@ -1,11 +1,25 @@
+
 {
     "description": "项目配置文件",
     "packOptions": {
         "ignore": [
-            {
-	        "type": "folder",
-	        "value": "/data-edit"
+          {
+              "type": "folder",
+              "value": "/data"
+          },
+          {
+              "type": "folder",
+              "value": "/image/shadow"
+          },
+          {
+              "type": "folder",
+              "value": "/image/soul"
+          },
+          {
+              "type": "folder",
+              "value": "/image/weapon"
           }
+          
         ]
     },
     "setting": {

@@ -1,0 +1,5 @@
+<template name="refresh-btn">
+    <view style="height:70rpx; width: 70rpx; position:absolute; right: 50rpx; bottom: 50rpx;background-color:white;z-index:999; border-radius:35rpx;box-shadow:1rpx 1rpx 1rpx black; display: flex; align-items: center;justify-content: center;" bindtap="refreshData">
+        <image src="/image/icon/refresh-btn.png" style="width: 50rpx;height: 50rpx"/>
+    </view>
+</template>

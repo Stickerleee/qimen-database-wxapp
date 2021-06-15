@@ -43,9 +43,8 @@
     小图标
  -->
 <template name="miniItem">
-    <view class="mini-img">
-        <image src="{{icon}}" mode="aspectFit"
-            style="max-height:64rpx; max-width:64rpx;background-color: rgba(0,0,0,0.1); border-radius:32rpx" />
+    <view class="mini-img" style="border-color: {{color}};">
+        <image src="{{icon}}" mode="aspectFit" style="max-height:64rpx; max-width:64rpx; border-radius:32rpx" />
     </view>
 </template>
 
@@ -81,31 +80,31 @@
                     </block>
                     <!-- 物品目录，用于添加新物品 -->
                     <block wx:if="{{!curitem.name}}">
-                    <scroll-view scroll-y="true" style="max-height:550rpx ">
-                        <view class="full-flex detail-category">
-                            <block wx:if="{{selectedItemSrc==='soul'}}">
-                                <block wx:for="{{soulCategory}}" wx:key="soulMiniItem">
-                                    <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
-                                        <template is="miniItem" data="{{icon:item.icon}}" />
-                                    </view>
+                        <scroll-view scroll-y="true" style="max-height:550rpx ">
+                            <view class="full-flex detail-category">
+                                <block wx:if="{{selectedItemSrc==='soul'}}">
+                                    <block wx:for="{{soulCategory}}" wx:key="soulMiniItem">
+                                        <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
+                                            <template is="miniItem" data="{{icon:item.icon,color:item.color}}" />
+                                        </view>
+                                    </block>
                                 </block>
-                            </block>
-                            <block wx:if="{{selectedItemSrc==='weapon'}}">
-                                <block wx:for="{{weaponCategory}}" wx:key="weaponMiniItem">
-                                    <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
-                                        <template is="miniItem" data="{{icon:item.icon}}" />
-                                    </view>
+                                <block wx:if="{{selectedItemSrc==='weapon'}}">
+                                    <block wx:for="{{weaponCategory}}" wx:key="weaponMiniItem">
+                                        <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
+                                            <template is="miniItem" data="{{icon:item.icon,color:item.color}}" />
+                                        </view>
+                                    </block>
                                 </block>
-                            </block>
-                            <block wx:if="{{selectedItemSrc==='shadowPositiv'}}">
-                                <block wx:for="{{shadowPositivCategory}}" wx:key="shadowPositivMiniItem">
-                                    <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
-                                        <template is="miniItem" data="{{icon:item.icon}}" />
-                                    </view>
+                                <block wx:if="{{selectedItemSrc==='shadowPositiv'}}">
+                                    <block wx:for="{{shadowPositivCategory}}" wx:key="shadowPositivMiniItem">
+                                        <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
+                                            <template is="miniItem" data="{{icon:item.icon,color:item.color}}" />
+                                        </view>
+                                    </block>
                                 </block>
-                            </block>
-                        </view>
-                    </scroll-view>
+                            </view>
+                        </scroll-view>
                     </block>
                 </view>
                 <block wx:if="{{!curitem.name}}">
@@ -156,7 +155,7 @@
         </view>
         <!-- 灵器选择卡，逻辑同上 -->
         <view class="tab">
-            <template is="title" data="{{title:'灵器',dataSrc:'weapon'}}" />
+            <template is="title" data="{{title:'灵器',dataSrc:'weapon',desc:'点击图标可查看详情'}}" />
             <view class="mini-card">
                 <view class="weapon-selector flex-btw">
                     <block wx:for="{{weapon}}" wx:for-index="weaponIdx" wx:for-item="weaponItem" wx:key="weapon">
@@ -171,7 +170,7 @@
         <!-- 残影选择卡 -->
         <!-- 主动残影，逻辑同上 -->
         <view class="tab">
-            <template is="title" data="{{title:'主动残影',dataSrc:'shadowPositiv'}}" />
+            <template is="title" data="{{title:'主动残影',dataSrc:'shadowPositiv',desc:'点击图标可查看详情'}}" />
             <view class="mini-card">
                 <view class="shadow-unit flex-btw">
                     <block wx:for="{{shadowPositiv}}" wx:for-item="shadowItem" wx:key="positiv"
