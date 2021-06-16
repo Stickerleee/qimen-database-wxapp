@@ -1,5 +1,6 @@
 // pages/weapon-category/weapon-category.js
 const db = require('../../utils/db')
+const util = require('../../utils/util')
 
 Page({
 
@@ -14,21 +15,29 @@ Page({
 	// 侧边栏点击事件
 	bindVtabClick: function (e) {
 		const nextIdx = e.detail.detail.index
-		const diviName = e.detail.title
-		const filterWeapons = nextIdx === 0 ? this.data.allWeapons : this.data.allWeapons.filter((item) => item.divinatory === diviName)
+		this.renderByCuridx(nextIdx)
+		
+	},
+
+	renderByCuridx(idx){
+        const diviName = util.vtabs[idx].title1
+        const filterWeapons = idx === 0 ? this.data.allWeapons : this.data.allWeapons.filter((item) => item.divinatory === diviName)
 		this.setData({
-			curIdx: nextIdx,
+			curIdx: idx,
 			curTabData: filterWeapons
 		})
 	},
+	
 	// 云端获取灵器目录
-	getWeaponCate() {
-		const allWeapons = db.getCategoryByType('weapon')
+	async getWeaponCate() {
+		const allWeapons = await db.getCategoryByType('weapon')
 		this.setData({
-			allWeapons,
-			curTabData: allWeapons
+			allWeapons
 		})
+		this.renderByCuridx(this.data.curIdx)
 	},
+
+
 	refreshData() {
 		wx.startPullDownRefresh()
 	},
@@ -42,6 +51,7 @@ Page({
 		// 	allWeapons,
 		// 	curTabData:allWeapons
 		// })
+		
 		this.getWeaponCate()
 	},
 

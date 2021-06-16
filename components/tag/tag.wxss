@@ -1,0 +1,10 @@
+/* components/tag/tag.wxss */
+.tag {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5rpx;
+    height: 60rpx;
+    width: 120rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

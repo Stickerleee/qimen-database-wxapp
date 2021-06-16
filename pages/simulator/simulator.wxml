@@ -19,7 +19,7 @@
                 </view>
             </block>
         </view>
-        <text class="text-desc">{{name}}</text>
+        <text class="text-desc selector-text">{{name}}</text>
     </view>
 </template>
 
@@ -43,8 +43,8 @@
     小图标
  -->
 <template name="miniItem">
-    <view class="mini-img" style="border-color: {{color}};">
-        <image src="{{icon}}" mode="aspectFit" style="max-height:64rpx; max-width:64rpx; border-radius:32rpx" />
+    <view class="mini-img flex-cent" style="border-color: {{color}};">
+        <image src="{{icon}}" mode="aspectFit" style="max-width:80rpx; max-height:80rpx; border-radius:40rpx;" />
     </view>
 </template>
 
@@ -81,27 +81,36 @@
                     <!-- 物品目录，用于添加新物品 -->
                     <block wx:if="{{!curitem.name}}">
                         <scroll-view scroll-y="true" style="max-height:550rpx ">
-                            <view class="full-flex detail-category">
+                            <view class="full-flex">
                                 <block wx:if="{{selectedItemSrc==='soul'}}">
-                                    <block wx:for="{{soulCategory}}" wx:key="soulMiniItem">
-                                        <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
-                                            <template is="miniItem" data="{{icon:item.icon,color:item.color}}" />
-                                        </view>
-                                    </block>
+                                    <view class="detail-category">
+                                        <block wx:for="{{soulCategory}}" wx:key="soulMiniItem">
+                                            <view bindtap="addItemTolist" data-itemID="{{item.id}}">
+                                                <template is="miniItem" data="{{icon:item.icon,color:item.color,size:'mini'}}" />
+                                            </view>
+                                        </block>
+                                    </view>
                                 </block>
                                 <block wx:if="{{selectedItemSrc==='weapon'}}">
-                                    <block wx:for="{{weaponCategory}}" wx:key="weaponMiniItem">
-                                        <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
-                                            <template is="miniItem" data="{{icon:item.icon,color:item.color}}" />
+                                    <block wx:for="{{weaponCategory}}" wx:key="weaponCate" wx:for-item="weaponDivi">
+                                        <view class="border-bottom weapon-cate">
+                                            <block wx:for="{{weaponDivi}}" wx:key="weaponMiniItem">
+                                                <view bindtap="addItemTolist" data-itemID="{{item.id}}">
+                                                    <template is="miniItem"
+                                                        data="{{icon:item.icon,color:item.color,size:'tiny'}}" />
+                                                </view>
+                                            </block>
                                         </view>
                                     </block>
                                 </block>
                                 <block wx:if="{{selectedItemSrc==='shadowPositiv'}}">
-                                    <block wx:for="{{shadowPositivCategory}}" wx:key="shadowPositivMiniItem">
-                                        <view bindtap="addItemTolist" data-IdxInCate="{{index}}">
-                                            <template is="miniItem" data="{{icon:item.icon,color:item.color}}" />
-                                        </view>
-                                    </block>
+                                    <view class="detail-category">
+                                        <block wx:for="{{shadowPositivCategory}}" wx:key="shadowPositivMiniItem">
+                                            <view bindtap="addItemTolist" data-itemID="{{item.id}}">
+                                                <template is="miniItem" data="{{icon:item.icon,color:item.color,size:'mini'}}" />
+                                            </view>
+                                        </block>
+                                    </view>
                                 </block>
                             </view>
                         </scroll-view>
@@ -109,6 +118,9 @@
                 </view>
                 <block wx:if="{{!curitem.name}}">
                     <view class="flex-cent text-desc">点击即可添加</view>
+                </block>
+                <block wx:if="{{curitem.name}}">
+                    <view class="flex-cent text-desc" bindtap="showMore" data-type="{{curitem.type}}" data-itemID="{{curitem.id}}">点击此处查看详情</view>
                 </block>
                 <view class="tab-button">
                     <!-- <block wx:if="{{curitem.name}}"> -->
@@ -215,7 +227,7 @@
                                     wx:for-index="shadowIdx">
                                     <view class="shadow-img" bindtap="changeCurItem" data-curitem="{{shadowItem}}"
                                         data-datasrc="shadowNegativ" data-dividx="{{shadowBundleIdx}}"
-                                        data-dataidx="{{shadowIdx}}">
+                                        data-dataidx="{{shadowIdx}}" data-itemID="{{shadowItem.id}}">
                                         <template is="selector" data="{{size:'circle',...shadowItem}}" />
                                     </view>
                                 </block>
@@ -223,7 +235,6 @@
                         </view>
                     </block>
                 </block>
-
             </view>
         </view>
         <!-- 效果总览，将所有的效果循环渲染在表中，默认为满级属性 -->

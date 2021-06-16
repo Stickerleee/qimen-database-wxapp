@@ -100,9 +100,9 @@ Page({
 	},
 
 
-	// 点击物品；保存被点击的selector的数据，以便遮罩页可以渲染详情页
+	// 点击物品，保存被点击的selector的数据，以便遮罩页可以渲染详情页；若没有物品，则会打开目录
 	changeCurItem(e) {
-		const {
+		let {
 			curitem,
 			dataidx,
 			datasrc,
@@ -131,7 +131,7 @@ Page({
 				return item
 			})
 			this.setData({
-				shadowCount:0
+				shadowCount: 0
 			})
 		} else {
 			result = target.map(() => {
@@ -170,11 +170,13 @@ Page({
 		const [soulCategory, weaponCategory, shadowCategory] = await Promise.all([db.getCategoryByType('soul'), db.getCategoryByType('weapon'), db.getCategoryByType('shadow')])
 		const shadowPositivCategory = shadowCategory.filter((item) => item.activ === 'positiv')
 		// const negativCategory = this.sortedByDivi(shadowCategory.filter((item)=>item.activ==='negativ'))
-		const negativCategory = util.sortedByDivi0(shadowCategory.filter((item) => item.activ === 'negativ'))
+		// 分类
+		const negativCategory = util.sortedByDivi(shadowCategory.filter((item) => item.activ === 'negativ'))
 		this.setData({
-			soulCategory:util.addColorByDivi(soulCategory),
-			weaponCategory:util.addColorByDivi(weaponCategory),
-			shadowPositivCategory:util.addColorByDivi(shadowPositivCategory),
+			// 着色
+			soulCategory: util.addColorByDivi(soulCategory),
+			weaponCategory: util.sortedByDivi(util.addColorByDivi(weaponCategory)),
+			shadowPositivCategory: util.addColorByDivi(shadowPositivCategory),
 			negativCategory
 		})
 	},
@@ -206,15 +208,30 @@ Page({
 		this.setData({
 			shadowNegativ
 		})
+		this.getAllEffect()
 	},
 	// 添加物品到对应的数组
+	// addItemTolist(e) {
+	// 	const {
+	// 		idxincate
+	// 	} = e.currentTarget.dataset
+	// 	const selectedItemSrc = this.data.selectedItemSrc
+	// 	const targetBundel = this.data[selectedItemSrc]
+	// 	const target = this.data[`${selectedItemSrc}Category`][idxincate]
+	// 	if (!this.checkItemExistById(target.id, targetBundel)) {
+	// 		targetBundel[this.data.selectedItemIdx] = target
+	// 		this.setData({
+	// 			showDetail: !this.data.showDetail,
+	// 			[selectedItemSrc]: targetBundel
+	// 		})
+	// 	}
+	// },
+
 	addItemTolist(e) {
-		const {
-			idxincate
-		} = e.currentTarget.dataset
+		const itemId = e.currentTarget.dataset.itemid
 		const selectedItemSrc = this.data.selectedItemSrc
 		const targetBundel = this.data[selectedItemSrc]
-		const target = this.data[`${selectedItemSrc}Category`][idxincate]
+		const target = selectedItemSrc === 'shadowPositiv' ? db.getItemDetailById('shadow', itemId) : db.getItemDetailById(selectedItemSrc, itemId)
 		if (!this.checkItemExistById(target.id, targetBundel)) {
 			targetBundel[this.data.selectedItemIdx] = target
 			this.setData({
@@ -222,7 +239,7 @@ Page({
 				[selectedItemSrc]: targetBundel
 			})
 		}
-
+		this.getAllEffect()
 	},
 
 	// 根据目标id检测是否已在list中，会有弹窗
@@ -256,11 +273,12 @@ Page({
 	async getLocalStorage() {
 		const storage = await wx.getStorageSync('simulator')
 		if (storage) {
-			const soul = await wx.getStorageSync('soul')
-			const weapon = await wx.getStorageSync('weapon')
-			const shadowPositiv = await wx.getStorageSync('shadowPositiv')
-			const shadowNegativ = await wx.getStorageSync('shadowNegativ')
-			const shadowCount = await wx.getStorageSync('shadowCount')
+			// const soul = await wx.getStorageSync('soul')
+			// const weapon = await wx.getStorageSync('weapon')
+			// const shadowPositiv = await wx.getStorageSync('shadowPositiv')
+			// const shadowNegativ = await wx.getStorageSync('shadowNegativ')
+			// const shadowCount = await wx.getStorageSync('shadowCount')
+			const [soul, weapon, shadowPositiv, shadowNegativ, shadowCount] = await Promise.all([wx.getStorageSync('soul'), wx.getStorageSync('weapon'), wx.getStorageSync('shadowPositiv'), wx.getStorageSync('shadowNegativ'), wx.getStorageSync('shadowCount')])
 			console.log('getLocalStorage success')
 			this.setData({
 				soul,
@@ -283,23 +301,47 @@ Page({
 			wx.setStorageSync('shadowCount', this.data.shadowCount),
 			wx.setStorageSync('simulator', 1)
 		]
-		Promise.all(foo)
+		Promise.all(foo).then(
+			console.log('saveLocalStorage success')
+		)
 
+	},
+
+	getAllEffect(){
+		const allEffect = []
+		this.setData({
+			allEffect
+		})
+	},
+
+	// 跳转物品详情页
+	showMore(e){
+		const {type, itemid} = e.currentTarget.dataset
+		if (type === 'soul') {
+			wx.navigateTo({
+			  url: `/pages/soul-detail/soul-detail?type=${type}&id=${itemid}`,
+			})
+		} else {
+			wx.navigateTo({
+			  url: `/pages/shadow-detail/shadow-detail?type=${type}&id=${itemid}`,
+			})
+		}
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-		this.getAllCategorys()
-		this.getLocalStorage()
+
 	},
 
 	/**
 	 * 生命周期函数--监听页面初次渲染完成
 	 */
 	onReady: function () {
-
+		this.getAllCategorys()
+		this.getLocalStorage()
+		this.getAllEffect()
 	},
 
 	/**
@@ -314,7 +356,6 @@ Page({
 	 */
 	onHide: function () {
 		this.saveLocalStorage()
-		console.log('saveLocalStorage after hidding')
 	},
 
 	/**

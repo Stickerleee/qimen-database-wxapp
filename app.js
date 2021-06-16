@@ -32,6 +32,6 @@ App({
 			weapon,
 			shadow
 		}
-		console.log('Data download success: ', this.globalData)
+		console.log('Data download success')
 	}
 })

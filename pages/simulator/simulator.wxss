@@ -16,8 +16,19 @@
 
 .detail-category {
     display: grid;
-    grid-template-columns: repeat(7, auto);
+    grid-template-columns: repeat(5, auto);
     grid-gap: 24rpx;
+}
+
+.weapon-cate {
+    padding: 16rpx 0;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 24rpx;
+}
+
+.weapon-cate:last-child {
+    border-bottom: 0px;
 }
 
 .base-info {
@@ -79,7 +90,7 @@
 
 .selector {
     min-height: 100%;
-    max-width: 130rpx;
+    max-width: 120rpx;
 }
 
 #selector-large {
@@ -98,13 +109,24 @@
     border-radius: 40rpx;
 }
 
+.selector-text {
+    max-width: 100rpx;
+    text-align: center;
+    text-overflow: ellipsis;
+    /*文本裁切 显示省略号*/
+    white-space: nowrap;
+    /*强制文本不换行*/
+    overflow: hidden;
+    /*溢出文本隐藏*/
+}
+
 .img {
     height: 120rpx;
     width: 120rpx;
 }
 
 .grey-bg {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(0, 0, 0, 0.05);
     border-radius: 10rpx;
 }
 
@@ -133,9 +155,17 @@
 }
 
 .mini-img {
-    height:64rpx;
-    width:64rpx;
-    background-color: rgba(0,0,0,0.1);
-    border-radius: 32rpx;
+    height: 80rpx;
+    width: 80rpx;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 40rpx;
     border: 4rpx solid;
+}
+
+.tiny-img {
+    max-height: 64rpx;
+    max-width: 64rpx;
+    border-radius: 32rpx;
+    border: 3rpx solid;
+    background-color: rgba(0, 0, 0, 0.1);
 }

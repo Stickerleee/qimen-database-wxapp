@@ -17,8 +17,13 @@ Page({
     bindVtabClick: function(e) {
         // 获得索引值
         const nextIdx = e.detail.detail.index
-        const diviName = e.detail.title
-        this.loadDiviItems(this.data.allshadows,diviName,nextIdx)
+        this.renderByCuridx(nextIdx)
+    },
+
+    // 根据索引渲染tabDataSrc
+    renderByCuridx(idx){
+        const diviName = util.vtabs[idx].title1
+        this.loadDiviItems(this.data.allshadows,diviName,idx)
     },
 
     // 分类主动和被动残影
@@ -40,13 +45,12 @@ Page({
     },
 
     // 云端/本地获取残影数据
-    getCategory(){
-        const allshadows = db.getCategoryByType('shadow')
-        const tabDataSrc = this.filterPosAndNeg(allshadows)
+    async getCategory(){
+        const allshadows = await db.getCategoryByType('shadow')
         this.setData({
-            allshadows,
-            tabDataSrc
+            allshadows
         })
+        this.renderByCuridx(this.data.curIdx)
     },
 
     refreshData(){
@@ -65,6 +69,7 @@ Page({
         //     tabDataSrc:[positivShadows,negativShadows]
         // })
         this.getCategory()
+        // this.renderByCuridx(this.data.curIdx)
     },
 
     /**
@@ -99,6 +104,7 @@ Page({
      */
     onPullDownRefresh: function () {
         this.getCategory()
+        // this.renderByCuridx(this.data.curIdx)
         wx.stopPullDownRefresh()
     },
 

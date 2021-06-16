@@ -30,5 +30,5 @@
         </list-categorys> -->
     <template is="list-cell" data="{{...item}}" />
 </blcok>
-<import src="/template/refresh-btn.wxml"/>
-<template is="refresh-btn" />
+<!-- <import src="/template/refresh-btn.wxml"/>
+<template is="refresh-btn" /> -->

@@ -13,17 +13,22 @@ async function getAlldata() {
         soul = result.filter((item) => item.type === 'soul')[0].category
         weapon = result.filter((item) => item.type === 'weapon')[0].category
         shadow = result.filter((item) => item.type === 'shadow')[0].category
+        wx.setStorageSync('result', result)
         return {
             soul,
             weapon,
             shadow
         }
     } catch (e) {
-        wx.showToast({
-            title: '获取数据失败，请重新打开小程序',
-            icon: 'error',
-            duration: 1000
-        })
+        const result = wx.getStorageSync('result')
+        soul = result.filter((item) => item.type === 'soul')[0].category
+        weapon = result.filter((item) => item.type === 'weapon')[0].category
+        shadow = result.filter((item) => item.type === 'shadow')[0].category
+        return {
+            soul,
+            weapon,
+            shadow
+        }
     }
 }
 
@@ -100,24 +105,40 @@ function getDetailById(type, id) {
 }
 
 // 获取type对应项目的目录
-function getCategoryByType(type) {
-    const locaData = getApp().globalData
+async function getCategoryByType(type) {
+    // const locaData = getApp().globalData
+    const localData = await waitDataDownload()
     let detail
     switch (type) {
         case 'soul':
-            detail = locaData.soul
+            detail = localData.soul
             break;
         case 'weapon':
-            detail = locaData.weapon
+            detail = localData.weapon
             break;
         case 'shadow':
-            detail = locaData.shadow
+            detail = localData.shadow
             break;
         default:
             break;
     }
-    console.log('getCate', detail)
+    console.log(`get ${type} category success`)
     return detail
+}
+
+// 检查数据是否加载成功，有定时器，注意消除
+function waitDataDownload() {
+    let locaData = getApp().globalData
+    if (!locaData.soul) {
+        const timeId = setInterval(() => {
+            locaData = getApp().globalData
+            if (locaData.soul) {
+                clearTimeout(timeId)
+            }
+        }, 200);
+    } else {
+        return locaData
+    }
 }
 
 module.exports = {

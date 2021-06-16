@@ -10,8 +10,8 @@ Page({
 
 
     // 云端获取神魂数据
-    getSoulCate() {
-        const categorys = db.getCategoryByType('soul')
+    async getSoulCate() {
+        const categorys = await db.getCategoryByType('soul')
         this.setData({
             categorys
         })
