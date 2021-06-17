@@ -87,6 +87,10 @@
     padding: 15rpx;
 }
 
+.shadow-activ:last-child .shadow-unit {
+    border-bottom: 0px;
+}
+
 
 .selector {
     min-height: 100%;

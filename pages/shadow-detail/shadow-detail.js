@@ -13,8 +13,8 @@ Page({
     },
 
     // 获取数据详情
-    getItemDetail(type, id) {
-        const itemDetail = db.getItemDetailById(type, id)
+    async getItemDetail(type, id) {
+        const itemDetail = await db.getItemDetailById(type, id)
         const {
             divinatory,
             effect,

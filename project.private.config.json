@@ -71,6 +71,12 @@
                     "pathName": "pages/shadow-detail/shadow-detail",
                     "query": "type=shadow&id=62019",
                     "scene": null
+                },
+                {
+                    "name": "pages/shadow-detail/shadow-detail",
+                    "pathName": "pages/shadow-detail/shadow-detail",
+                    "query": "type=weapon&id=60321",
+                    "scene": null
                 }
             ]
         }

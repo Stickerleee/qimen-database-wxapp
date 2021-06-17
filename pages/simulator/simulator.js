@@ -101,14 +101,17 @@ Page({
 
 
 	// 点击物品，保存被点击的selector的数据，以便遮罩页可以渲染详情页；若没有物品，则会打开目录
-	changeCurItem(e) {
+	async changeCurItem(e) {
 		let {
-			curitem,
 			dataidx,
 			datasrc,
-			dividx
+			dividx,
+			itemid
 		} = e.currentTarget.dataset
-		curitem.color = util.getBaguaColor(curitem.divinatory)
+		let curitem = datasrc === 'shadowNegativ' ? this.data[`${datasrc}`][dividx].data[dataidx] : this.data[`${datasrc}`][dataidx]
+		try {
+			curitem.color = util.getBaguaColor(curitem.divinatory)
+		} catch(e) {}
 		this.setData({
 			curitem,
 			showDetail: !this.data.showDetail,
@@ -227,11 +230,11 @@ Page({
 	// 	}
 	// },
 
-	addItemTolist(e) {
+	async addItemTolist(e) {
 		const itemId = e.currentTarget.dataset.itemid
 		const selectedItemSrc = this.data.selectedItemSrc
 		const targetBundel = this.data[selectedItemSrc]
-		const target = selectedItemSrc === 'shadowPositiv' ? db.getItemDetailById('shadow', itemId) : db.getItemDetailById(selectedItemSrc, itemId)
+		const target = selectedItemSrc === 'shadowPositiv' ? await db.getItemDetailById('shadow', itemId) : await db.getItemDetailById(selectedItemSrc, itemId)
 		if (!this.checkItemExistById(target.id, targetBundel)) {
 			targetBundel[this.data.selectedItemIdx] = target
 			this.setData({
@@ -241,6 +244,7 @@ Page({
 		}
 		this.getAllEffect()
 	},
+
 
 	// 根据目标id检测是否已在list中，会有弹窗
 	checkItemExistById(targetId, list) {
@@ -332,23 +336,24 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
-	},
-
-	/**
-	 * 生命周期函数--监听页面初次渲染完成
-	 */
-	onReady: function () {
+		wx.showNavigationBarLoading()
 		this.getAllCategorys()
 		this.getLocalStorage()
 		this.getAllEffect()
 	},
 
 	/**
+	 * 生命周期函数--监听页面初次渲染完成
+	 */
+	onReady: function () {
+		
+	},
+
+	/**
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		wx.hideNavigationBarLoading()
 	},
 
 	/**

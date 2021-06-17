@@ -2,19 +2,25 @@
 <!-- 主页 -->
 <view class="container">
 <view class="tab">
+	<view class="info-text">
+		<view class="second-title text-sec-title">使用说明</view>
+		<text>● 神魂、残影、灵器页为图鉴，提供展示和查询功能 \n</text>
+		<text>● 我的搭配 页面能自定义添加物品，也可以查询各个物品的详细信息，方便制作自己的搭配BD \n</text>
+		<text>● 物品解封和灵器满级数据不完整，等新赛季后补充更新 \n</text>
+	</view>
 	
 	<view class="info-text">
 		<view class="second-title text-sec-title">小程序说明</view>
-		<text>● 制作本小程序出于兴趣爱好，禁止用于任何商业用途 \n</text>
+		<text>● 本小程序不可用于任何商业用途 \n</text>
 		<text>● BUG反馈＆数据勘误：951155060@qq.com \n</text>
-		<text>● 数据更新时间 2021年6月15日16:24:27 \n</text>
+		<text>● 数据更新时间 2021年6月17日17:33:07 \n</text>
 		<text>● 图片资源源自网络，如侵权请邮箱联系删除 \n</text>
 	</view>
 	
 	<view class="info-text ">
 		<view class="second-title text-sec-title">更新说明</view>
 		<text>● v0.0.1 \n</text>
-		<text> 初始版本发布 \n</text>
+		<text> 体验版发布 \n</text>
 	</view>
 </view>
 </view>

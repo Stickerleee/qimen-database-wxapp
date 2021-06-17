@@ -12,7 +12,7 @@
                 <view class="bagua-icon">
                     <view class="icon-container" id="bagua-icon">
                         <view class="effect-icon">
-                            <image src="{{baguaIcon}}" mode="heightFix" style="max-height:100%; max-width:100%;" />
+                            <image src="{{baguaIcon}}" mode="aspectFit" style="max-height:100%; max-width:100%;" />
                         </view>
                     </view>
                     <view class="effect-with-icon">

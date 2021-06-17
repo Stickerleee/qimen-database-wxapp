@@ -24,8 +24,8 @@ Page({
     //     })
     // },
 
-    getSoulDetail(id){
-        const detail =  db.getSoulDetailById(id)
+    async getSoulDetail(id){
+        const detail = await db.getSoulDetailById(id)
         const {pic0,pic1,pic2,text0,text1,text2,divinatory} = detail
         this.setData({
             ...detail,

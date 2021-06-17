@@ -85,7 +85,7 @@
                                 <block wx:if="{{selectedItemSrc==='soul'}}">
                                     <view class="detail-category">
                                         <block wx:for="{{soulCategory}}" wx:key="soulMiniItem">
-                                            <view bindtap="addItemTolist" data-itemID="{{item.id}}">
+                                            <view bindtap="addItemTolist" data-itemID="{{item.id}}" data-type="soul" bindlongpress="showMore">
                                                 <template is="miniItem" data="{{icon:item.icon,color:item.color,size:'mini'}}" />
                                             </view>
                                         </block>
@@ -95,7 +95,7 @@
                                     <block wx:for="{{weaponCategory}}" wx:key="weaponCate" wx:for-item="weaponDivi">
                                         <view class="border-bottom weapon-cate">
                                             <block wx:for="{{weaponDivi}}" wx:key="weaponMiniItem">
-                                                <view bindtap="addItemTolist" data-itemID="{{item.id}}">
+                                                <view bindtap="addItemTolist" data-itemID="{{item.id}}" data-type="weapon" bindlongpress="showMore">
                                                     <template is="miniItem"
                                                         data="{{icon:item.icon,color:item.color,size:'tiny'}}" />
                                                 </view>
@@ -106,7 +106,7 @@
                                 <block wx:if="{{selectedItemSrc==='shadowPositiv'}}">
                                     <view class="detail-category">
                                         <block wx:for="{{shadowPositivCategory}}" wx:key="shadowPositivMiniItem">
-                                            <view bindtap="addItemTolist" data-itemID="{{item.id}}">
+                                            <view bindtap="addItemTolist" data-itemID="{{item.id}}" data-type="shadow" bindlongpress="showMore">
                                                 <template is="miniItem" data="{{icon:item.icon,color:item.color,size:'mini'}}" />
                                             </view>
                                         </block>
@@ -117,7 +117,7 @@
                     </block>
                 </view>
                 <block wx:if="{{!curitem.name}}">
-                    <view class="flex-cent text-desc">点击即可添加</view>
+                    <view class="flex-cent text-desc">点击添加到已选，长按查看详情</view>
                 </block>
                 <block wx:if="{{curitem.name}}">
                     <view class="flex-cent text-desc" bindtap="showMore" data-type="{{curitem.type}}" data-itemID="{{curitem.id}}">点击此处查看详情</view>
@@ -152,13 +152,13 @@
                     </block> -->
                     <view class="flex-btw flex-cent">
                         <text class="text-text">三件套：</text>
-                        <view bindtap="changeCurItem" data-curitem="{{soul[0]}}" data-datasrc="soul" data-dataidx="0">
+                        <view bindtap="changeCurItem" data-datasrc="soul" data-dataidx="0" data-itemID="{{soul[0].id}}">
                             <template is="selector" data="{{size:'large',...soul[0],dataSrc:'soul',dataIdx:'0'}}" />
                         </view>
                     </view>
                     <view class="flex-btw flex-cent">
                         <text class="text-text">两件套：</text>
-                        <view bindtap="changeCurItem" data-curitem="{{soul[1]}}" data-datasrc="soul" data-dataidx="1">
+                        <view bindtap="changeCurItem" data-datasrc="soul" data-dataidx="1" data-itemID="{{soul[1].id}}">
                             <template is="selector" data="{{size:'large',...soul[1]}}" />
                         </view>
                     </view>
@@ -171,8 +171,8 @@
             <view class="mini-card">
                 <view class="weapon-selector flex-btw">
                     <block wx:for="{{weapon}}" wx:for-index="weaponIdx" wx:for-item="weaponItem" wx:key="weapon">
-                        <view bindtap="changeCurItem" data-curitem="{{weaponItem}}" data-datasrc="weapon"
-                            data-dataidx="{{weaponIdx}}">
+                        <view bindtap="changeCurItem" data-datasrc="weapon"
+                            data-dataidx="{{weaponIdx}}" data-itemID="{{weaponItem.id}}">
                             <template is="selector" data="{{size:'normal',...weaponItem}}" />
                         </view>
                     </block>
@@ -187,8 +187,8 @@
                 <view class="shadow-unit flex-btw">
                     <block wx:for="{{shadowPositiv}}" wx:for-item="shadowItem" wx:key="positiv"
                         wx:for-index="shadowIdx">
-                        <view class="shadow-img" bindtap="changeCurItem" data-curitem="{{shadowItem}}"
-                            data-datasrc="shadowPositiv" data-dataidx="{{shadowIdx}}">
+                        <view class="shadow-img" bindtap="changeCurItem"
+                            data-datasrc="shadowPositiv" data-dataidx="{{shadowIdx}}" data-itemID="{{shadowItem.id}}">
                             <template is="selector" data="{{size:'normal',...shadowItem}}" />
                         </view>
                     </block>
@@ -225,7 +225,7 @@
                             <view class="shadow-unit flex-btw border-bottom">
                                 <block wx:for="{{shadowBundle.data}}" wx:for-item="shadowItem" wx:key="shadow"
                                     wx:for-index="shadowIdx">
-                                    <view class="shadow-img" bindtap="changeCurItem" data-curitem="{{shadowItem}}"
+                                    <view class="shadow-img" bindtap="changeCurItem" 
                                         data-datasrc="shadowNegativ" data-dividx="{{shadowBundleIdx}}"
                                         data-dataidx="{{shadowIdx}}" data-itemID="{{shadowItem.id}}">
                                         <template is="selector" data="{{size:'circle',...shadowItem}}" />
